@@ -1,0 +1,11 @@
+campaign_id,campaign_name,client,campaign_type,target_service_level,monthly_cost
+1,Vodacom Upgrades,Vodacom,Sales,0.8,540000
+2,ABSA Collections,ABSA,Collections,0.85,540000
+3,MTN Retentions,MTN,Retentions,0.8,480000
+4,Takealot Care,Takealot,Customer Care,0.9,480000
+5,Telkom Tech Support,Telkom,Tech Support,0.85,480000
+6,Nedbank Debt Review,Nedbank,Collections,0.8,320000
+7,DStv Upsell,MultiChoice,Sales,0.8,540000
+8,Discovery Lead Gen,Discovery,Lead Gen,0.75,610000
+9,Standard Bank Helpdesk,Standard Bank,Customer Care,0.9,720000
+10,OUTsurance Sales,OUTsurance,Sales,0.8,720000

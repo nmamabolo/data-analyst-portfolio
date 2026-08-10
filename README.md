@@ -24,6 +24,14 @@ End-to-end analytical models with linked data sheets and live dashboards:
 7. **Client SLA Performance Scorecard** — actual vs target, RAG, penalty modelling
 8. **Intraday Interval Performance Tracker** — 30-minute WFM real-time view
 
+### [`SQL-Analytics/`](./SQL-Analytics) — SQL project 🗄️
+A ready-to-run **SQLite** database (campaigns · agents · calls) with a library of analytical queries — joins, `CASE`, `HAVING`, CTEs and **window functions** (`RANK`, `LAG`, `AVG/SUM OVER`). Every query is documented with sample output.
+
+### [`PowerBI-Campaign-Dashboard/`](./PowerBI-Campaign-Dashboard) — Power BI project 📈
+A star-schema dataset, a **20+ measure DAX library**, a report-design spec and a dashboard mockup, plus a step-by-step build guide to reproduce the `.pbix`.
+
+![Power BI dashboard mockup](./PowerBI-Campaign-Dashboard/dashboard_mockup.png)
+
 ---
 
 ## 🛠️ Techniques demonstrated
