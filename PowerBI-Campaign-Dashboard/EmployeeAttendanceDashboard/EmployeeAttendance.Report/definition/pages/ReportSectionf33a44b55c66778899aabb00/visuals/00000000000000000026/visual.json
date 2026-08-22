@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000026",
+  "position": {
+    "x": 650,
+    "y": 470,
+    "z": 38000,
+    "height": 200,
+    "width": 605,
+    "tabOrder": 38000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Managers"
+                    }
+                  },
+                  "Property": "Manager Name"
+                }
+              },
+              "queryRef": "Managers.Manager Name",
+              "nativeQueryRef": "Manager Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Attendance"
+                    }
+                  },
+                  "Property": "Active Employees"
+                }
+              },
+              "queryRef": "Attendance.Active Employees",
+              "nativeQueryRef": "Active Employees"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Attendance"
+                    }
+                  },
+                  "Property": "Absence %"
+                }
+              },
+              "queryRef": "Attendance.Absence %",
+              "nativeQueryRef": "Absence %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Attendance"
+                    }
+                  },
+                  "Property": "Lateness Rate"
+                }
+              },
+              "queryRef": "Attendance.Lateness Rate",
+              "nativeQueryRef": "Lateness Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Attendance"
+                    }
+                  },
+                  "Property": "Total Late Minutes"
+                }
+              },
+              "queryRef": "Attendance.Total Late Minutes",
+              "nativeQueryRef": "Total Late Minutes"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Manager Attendance Comparison'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

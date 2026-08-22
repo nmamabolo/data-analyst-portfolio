@@ -1,0 +1,129 @@
+table Attendance
+
+	measure 'Scheduled Days' = CALCULATE(COUNTROWS(Attendance), Attendance[Status] <> "Leave")
+		formatString: #,##0
+
+	measure 'Absent Days' = CALCULATE(COUNTROWS(Attendance), Attendance[Status] = "Absent")
+		formatString: #,##0
+
+	measure 'Absence %' = DIVIDE([Absent Days], [Scheduled Days])
+		formatString: 0.0%
+
+	measure 'Attendance %' = 1 - [Absence %]
+		formatString: 0.0%
+
+	measure 'Late Arrivals' = CALCULATE(COUNTROWS(Attendance), Attendance[Status] = "Late")
+		formatString: #,##0
+
+	measure 'Lateness Rate' = DIVIDE([Late Arrivals], [Scheduled Days])
+		formatString: 0.0%
+
+	measure 'Total Late Minutes' = SUM(Attendance[Late Minutes])
+		formatString: #,##0
+
+	measure 'Average Late Minutes' = DIVIDE([Total Late Minutes], [Late Arrivals])
+		formatString: #,##0.0
+
+	measure 'On-Time Days' = CALCULATE(COUNTROWS(Attendance), Attendance[Status] = "Present")
+		formatString: #,##0
+
+	measure 'On-Time Rate' = DIVIDE([On-Time Days], [Scheduled Days])
+		formatString: 0.0%
+
+	measure 'Active Employees' = DISTINCTCOUNT(Attendance[Employee Key])
+		formatString: #,##0
+
+	measure 'Target Absence %' = CALCULATE(AVERAGE('Monthly Targets'[Target Absence Rate]), TREATAS(VALUES(Calendar[Month Key]), 'Monthly Targets'[Month Key]))
+		formatString: 0.0%
+
+	measure 'Absence Variance pp' = ([Absence %] - [Target Absence %]) * 100
+		formatString: 0.0
+
+	measure 'Target Lateness Rate' = CALCULATE(AVERAGE('Monthly Targets'[Target Lateness Rate]), TREATAS(VALUES(Calendar[Month Key]), 'Monthly Targets'[Month Key]))
+		formatString: 0.0%
+
+	measure 'Previous Month Absence %' = CALCULATE([Absence %], DATEADD(Calendar[Date], -1, MONTH))
+		formatString: 0.0%
+
+	measure 'MoM Absence Change pp' = ([Absence %] - [Previous Month Absence %]) * 100
+		formatString: 0.0
+
+	measure 'Late Minutes per Employee' = DIVIDE([Total Late Minutes], [Active Employees])
+		formatString: #,##0.0
+
+	column 'Attendance ID'
+		dataType: int64
+		sourceColumn: Attendance ID
+		summarizeBy: none
+
+	column Date
+		dataType: dateTime
+		sourceColumn: Date
+		summarizeBy: none
+		formatString: yyyy-mm-dd
+
+	column 'Date Key'
+		dataType: int64
+		sourceColumn: Date Key
+		summarizeBy: none
+
+	column 'Month Key'
+		dataType: int64
+		sourceColumn: Month Key
+		summarizeBy: none
+
+	column 'Employee Key'
+		dataType: int64
+		sourceColumn: Employee Key
+		summarizeBy: none
+
+	column 'Department Key'
+		dataType: int64
+		sourceColumn: Department Key
+		summarizeBy: none
+
+	column 'Manager Key'
+		dataType: int64
+		sourceColumn: Manager Key
+		summarizeBy: none
+
+	column Status
+		dataType: string
+		sourceColumn: Status
+		summarizeBy: none
+
+	column 'Absent Flag'
+		dataType: int64
+		sourceColumn: Absent Flag
+		summarizeBy: none
+
+	column 'Late Flag'
+		dataType: int64
+		sourceColumn: Late Flag
+		summarizeBy: none
+
+	column 'Late Minutes'
+		dataType: int64
+		sourceColumn: Late Minutes
+		summarizeBy: none
+
+	column 'Arrival Time'
+		dataType: string
+		sourceColumn: Arrival Time
+		summarizeBy: none
+
+	column 'Work Mode'
+		dataType: string
+		sourceColumn: Work Mode
+		summarizeBy: none
+
+	partition 'Attendance' = m
+		mode: import
+		source =
+			let
+				Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				#"Selected Attendance sheet" = Source{[Item="Attendance",Kind="Sheet"]}[Data],
+				#"Promoted column headers" = Table.PromoteHeaders(#"Selected Attendance sheet", [PromoteAllScalars=true]),
+				#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Attendance ID", Int64.Type}, {"Date", type date}, {"Date Key", Int64.Type}, {"Month Key", Int64.Type}, {"Employee Key", Int64.Type}, {"Department Key", Int64.Type}, {"Manager Key", Int64.Type}, {"Status", type text}, {"Absent Flag", Int64.Type}, {"Late Flag", Int64.Type}, {"Late Minutes", Int64.Type}, {"Arrival Time", type text}, {"Work Mode", type text}})
+			in
+				#"Applied column types"

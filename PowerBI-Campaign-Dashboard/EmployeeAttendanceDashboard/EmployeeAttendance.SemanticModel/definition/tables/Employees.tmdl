@@ -1,0 +1,57 @@
+table Employees
+
+	column 'Employee Key'
+		dataType: int64
+		sourceColumn: Employee Key
+		summarizeBy: none
+
+	column 'Employee ID'
+		dataType: string
+		sourceColumn: Employee ID
+		summarizeBy: none
+
+	column 'Employee Name'
+		dataType: string
+		sourceColumn: Employee Name
+		summarizeBy: none
+
+	column 'Department Key'
+		dataType: int64
+		sourceColumn: Department Key
+		summarizeBy: none
+
+	column 'Manager Key'
+		dataType: int64
+		sourceColumn: Manager Key
+		summarizeBy: none
+
+	column Role
+		dataType: string
+		sourceColumn: Role
+		summarizeBy: none
+
+	column Location
+		dataType: string
+		sourceColumn: Location
+		summarizeBy: none
+
+	column 'Hire Date'
+		dataType: dateTime
+		sourceColumn: Hire Date
+		summarizeBy: none
+
+	column 'Work Mode'
+		dataType: string
+		sourceColumn: Work Mode
+		summarizeBy: none
+
+	partition 'Employees' = m
+		mode: import
+		source =
+			let
+				Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				#"Selected Employees sheet" = Source{[Item="Employees",Kind="Sheet"]}[Data],
+				#"Promoted column headers" = Table.PromoteHeaders(#"Selected Employees sheet", [PromoteAllScalars=true]),
+				#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Employee Key", Int64.Type}, {"Employee ID", type text}, {"Employee Name", type text}, {"Department Key", Int64.Type}, {"Manager Key", Int64.Type}, {"Role", type text}, {"Location", type text}, {"Hire Date", type date}, {"Work Mode", type text}})
+			in
+				#"Applied column types"

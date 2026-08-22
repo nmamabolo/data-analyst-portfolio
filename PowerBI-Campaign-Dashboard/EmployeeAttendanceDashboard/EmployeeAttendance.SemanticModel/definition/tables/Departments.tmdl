@@ -1,0 +1,27 @@
+table Departments
+
+	column 'Department Key'
+		dataType: int64
+		sourceColumn: Department Key
+		summarizeBy: none
+
+	column Department
+		dataType: string
+		sourceColumn: Department
+		summarizeBy: none
+
+	column Description
+		dataType: string
+		sourceColumn: Description
+		summarizeBy: none
+
+	partition 'Departments' = m
+		mode: import
+		source =
+			let
+				Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				#"Selected Departments sheet" = Source{[Item="Departments",Kind="Sheet"]}[Data],
+				#"Promoted column headers" = Table.PromoteHeaders(#"Selected Departments sheet", [PromoteAllScalars=true]),
+				#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Department Key", Int64.Type}, {"Department", type text}, {"Description", type text}})
+			in
+				#"Applied column types"

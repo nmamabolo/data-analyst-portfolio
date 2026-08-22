@@ -1,0 +1,37 @@
+table 'Monthly Targets'
+
+	column 'Month Key'
+		dataType: int64
+		sourceColumn: Month Key
+		summarizeBy: none
+
+	column 'Month Year'
+		dataType: string
+		sourceColumn: Month Year
+		summarizeBy: none
+
+	column 'Department Key'
+		dataType: int64
+		sourceColumn: Department Key
+		summarizeBy: none
+
+	column 'Target Absence Rate'
+		dataType: double
+		sourceColumn: Target Absence Rate
+		summarizeBy: none
+
+	column 'Target Lateness Rate'
+		dataType: double
+		sourceColumn: Target Lateness Rate
+		summarizeBy: none
+
+	partition 'Monthly Targets' = m
+		mode: import
+		source =
+			let
+				Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				#"Selected Monthly Targets sheet" = Source{[Item="Monthly Targets",Kind="Sheet"]}[Data],
+				#"Promoted column headers" = Table.PromoteHeaders(#"Selected Monthly Targets sheet", [PromoteAllScalars=true]),
+				#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Month Key", Int64.Type}, {"Month Year", type text}, {"Department Key", Int64.Type}, {"Target Absence Rate", type number}, {"Target Lateness Rate", type number}})
+			in
+				#"Applied column types"

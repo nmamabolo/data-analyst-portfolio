@@ -1,0 +1,19 @@
+relationship 'Attendance to Calendar'
+	fromColumn: Attendance.'Date Key'
+	toColumn: Calendar.'Date Key'
+
+relationship 'Attendance to Employees'
+	fromColumn: Attendance.'Employee Key'
+	toColumn: Employees.'Employee Key'
+
+relationship 'Employees to Departments'
+	fromColumn: Employees.'Department Key'
+	toColumn: Departments.'Department Key'
+
+relationship 'Employees to Managers'
+	fromColumn: Employees.'Manager Key'
+	toColumn: Managers.'Manager Key'
+
+relationship 'Targets to Departments'
+	fromColumn: 'Monthly Targets'.'Department Key'
+	toColumn: Departments.'Department Key'

@@ -1,0 +1,27 @@
+table Managers
+
+	column 'Manager Key'
+		dataType: int64
+		sourceColumn: Manager Key
+		summarizeBy: none
+
+	column 'Manager Name'
+		dataType: string
+		sourceColumn: Manager Name
+		summarizeBy: none
+
+	column 'Department Key'
+		dataType: int64
+		sourceColumn: Department Key
+		summarizeBy: none
+
+	partition 'Managers' = m
+		mode: import
+		source =
+			let
+				Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				#"Selected Managers sheet" = Source{[Item="Managers",Kind="Sheet"]}[Data],
+				#"Promoted column headers" = Table.PromoteHeaders(#"Selected Managers sheet", [PromoteAllScalars=true]),
+				#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Manager Key", Int64.Type}, {"Manager Name", type text}, {"Department Key", Int64.Type}})
+			in
+				#"Applied column types"

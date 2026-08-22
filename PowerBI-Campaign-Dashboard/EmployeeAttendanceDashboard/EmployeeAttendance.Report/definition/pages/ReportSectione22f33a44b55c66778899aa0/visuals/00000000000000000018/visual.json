@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000018",
+  "position": {
+    "x": 650,
+    "y": 250,
+    "z": 24000,
+    "height": 200,
+    "width": 605,
+    "tabOrder": 24000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Managers"
+                    }
+                  },
+                  "Property": "Manager Name"
+                }
+              },
+              "queryRef": "Managers.Manager Name",
+              "nativeQueryRef": "Manager Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Attendance"
+                    }
+                  },
+                  "Property": "Total Late Minutes"
+                }
+              },
+              "queryRef": "Attendance.Total Late Minutes",
+              "nativeQueryRef": "Total Late Minutes"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Managers"
+                  }
+                },
+                "Property": "Manager Name"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Late Minutes by Manager'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
