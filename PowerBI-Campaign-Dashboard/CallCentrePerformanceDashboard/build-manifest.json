@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-08-10T14:32:44.356Z",
+  "dataset": {
+    "calls": 18000,
+    "agents": 18,
+    "queues": 4,
+    "startDate": "2025-09-01",
+    "endDate": "2026-08-09",
+    "synthetic": true
+  },
+  "model": {
+    "tables": [
+      "Calls",
+      "Agents",
+      "Queues",
+      "Calendar"
+    ],
+    "measures": 13,
+    "relationships": 3
+  },
+  "report": {
+    "pages": [
+      "Executive Overview",
+      "Agent Performance",
+      "Queue & Trends"
+    ],
+    "visuals": 35,
+    "kpiCards": 15
+  }
+}

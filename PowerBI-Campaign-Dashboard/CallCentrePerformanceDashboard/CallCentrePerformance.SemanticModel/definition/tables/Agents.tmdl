@@ -1,0 +1,50 @@
+table Agents
+	lineageTag: 681c9dcd-635b-4df3-9c66-967032e7d5a1
+
+	column 'Agent Key'
+		dataType: int64
+		lineageTag: 109d0f3c-ce04-4d38-b099-81a10f3085ad
+		summarizeBy: none
+		sourceColumn: Agent Key
+
+	column 'Agent ID'
+		dataType: string
+		lineageTag: b9a72a2a-55c0-49c4-ae3b-b316ce96d98d
+		summarizeBy: none
+		sourceColumn: Agent ID
+
+	column 'Agent Name'
+		dataType: string
+		lineageTag: 1ba6a027-3a9a-40a8-b66b-a5d8bcc50db3
+		summarizeBy: none
+		sourceColumn: Agent Name
+
+	column Team
+		dataType: string
+		lineageTag: 57548403-e3bc-452d-b170-db2b886eb1a6
+		summarizeBy: none
+		sourceColumn: Team
+
+	column Location
+		dataType: string
+		lineageTag: 19e465ff-1e76-4de3-8495-d9a4eff10462
+		summarizeBy: none
+		sourceColumn: Location
+
+	column 'Tenure Months'
+		dataType: int64
+		lineageTag: 6c5785e0-798e-4c94-8127-3bd6f2081aa1
+		summarizeBy: none
+		sourceColumn: Tenure Months
+
+	partition Agents = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Agents sheet" = Source{[Item="Agents",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Agents sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Agent Key", Int64.Type}, {"Agent ID", type text}, {"Agent Name", type text}, {"Team", type text}, {"Location", type text}, {"Tenure Months", Int64.Type}})
+				in
+					#"Applied column types"
+

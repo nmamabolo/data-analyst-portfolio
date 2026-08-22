@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0000000000000000000e",
+  "position": {
+    "x": 24,
+    "y": 250,
+    "z": 14000,
+    "height": 420,
+    "width": 470,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agents"
+                    }
+                  },
+                  "Property": "Agent Name"
+                }
+              },
+              "queryRef": "Agents.Agent Name",
+              "nativeQueryRef": "Agent Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Answered Calls"
+                }
+              },
+              "queryRef": "Calls.Answered Calls",
+              "nativeQueryRef": "Answered Calls"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Agents"
+                  }
+                },
+                "Property": "Agent Name"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Answered Calls by Agent'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

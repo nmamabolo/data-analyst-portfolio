@@ -1,0 +1,151 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0000000000000000000f",
+  "position": {
+    "x": 515,
+    "y": 250,
+    "z": 15000,
+    "height": 420,
+    "width": 740,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agents"
+                    }
+                  },
+                  "Property": "Agent Name"
+                }
+              },
+              "queryRef": "Agents.Agent Name",
+              "nativeQueryRef": "Agent Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Answered Calls"
+                }
+              },
+              "queryRef": "Calls.Answered Calls",
+              "nativeQueryRef": "Answered Calls"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Average Handle Time (min)"
+                }
+              },
+              "queryRef": "Calls.Average Handle Time (min)",
+              "nativeQueryRef": "Average Handle Time (min)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "SLA Rate"
+                }
+              },
+              "queryRef": "Calls.SLA Rate",
+              "nativeQueryRef": "SLA Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Average CSAT"
+                }
+              },
+              "queryRef": "Calls.Average CSAT",
+              "nativeQueryRef": "Average CSAT"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "FCR Rate"
+                }
+              },
+              "queryRef": "Calls.FCR Rate",
+              "nativeQueryRef": "FCR Rate"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Agent Scorecard'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

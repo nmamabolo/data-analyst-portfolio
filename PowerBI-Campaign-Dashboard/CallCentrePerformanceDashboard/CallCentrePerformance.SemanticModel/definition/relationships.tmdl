@@ -1,0 +1,22 @@
+relationship 'Calls to Calendar'
+	fromColumn: Calls.'Date Key'
+	toColumn: Calendar.'Date Key'
+
+relationship 'Calls to Agents'
+	fromColumn: Calls.'Agent Key'
+	toColumn: Agents.'Agent Key'
+
+relationship 'Calls to Queues'
+	fromColumn: Calls.'Queue Key'
+	toColumn: Queues.'Queue Key'
+
+relationship fa00f3c8-e5d5-4a6b-bd98-6909fc8282b3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calls.'Start Date Time'
+	toColumn: LocalDateTable_b9f1f334-fc29-4218-855c-5238f8f0cfd5.Date
+
+relationship 300b9713-ba51-4eb1-a6b7-a3b8ea0b71c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calls.Date
+	toColumn: LocalDateTable_b34b089a-2f21-4209-933b-d48ad3733b72.Date
+

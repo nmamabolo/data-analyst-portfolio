@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000017",
+  "position": {
+    "x": 560,
+    "y": 465,
+    "z": 23000,
+    "height": 205,
+    "width": 695,
+    "tabOrder": 23000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Month Year"
+                }
+              },
+              "queryRef": "Calendar.Month Year",
+              "nativeQueryRef": "Month Year",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "SLA Rate"
+                }
+              },
+              "queryRef": "Calls.SLA Rate",
+              "nativeQueryRef": "SLA Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Abandonment Rate"
+                }
+              },
+              "queryRef": "Calls.Abandonment Rate",
+              "nativeQueryRef": "Abandonment Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendar"
+                  }
+                },
+                "Property": "Month Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Monthly SLA & Abandonment Trend'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

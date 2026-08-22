@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000016",
+  "position": {
+    "x": 560,
+    "y": 250,
+    "z": 22000,
+    "height": 195,
+    "width": 695,
+    "tabOrder": 22000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Week Label"
+                }
+              },
+              "queryRef": "Calendar.Week Label",
+              "nativeQueryRef": "Week Label",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Total Calls"
+                }
+              },
+              "queryRef": "Calls.Total Calls",
+              "nativeQueryRef": "Total Calls"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Answered Calls"
+                }
+              },
+              "queryRef": "Calls.Answered Calls",
+              "nativeQueryRef": "Answered Calls"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendar"
+                  }
+                },
+                "Property": "Week Label"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Weekly Call Trend'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

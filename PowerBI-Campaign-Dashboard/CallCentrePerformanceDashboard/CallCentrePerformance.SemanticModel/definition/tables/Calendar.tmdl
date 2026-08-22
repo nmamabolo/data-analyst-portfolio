@@ -1,0 +1,117 @@
+table Calendar
+	lineageTag: 74d34707-a42d-4c89-bbe3-95d0a78efa07
+	dataCategory: Time
+
+	column 'Date Key'
+		dataType: int64
+		lineageTag: a344d7f0-8888-40c0-aa97-ec334b156692
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: b918537b-899a-4c5e-a0ca-d1a274c58ed0
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		lineageTag: fc5eb52e-c1af-49bc-9366-62f0993b00d6
+		summarizeBy: none
+		sourceColumn: Year
+
+	column 'Month Number'
+		dataType: int64
+		isHidden
+		lineageTag: df478ce1-bb54-479e-9d75-5b5874b58057
+		summarizeBy: none
+		sourceColumn: Month Number
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: ae66a86a-8fee-43d9-9ce1-401fdb5989db
+		summarizeBy: none
+		sourceColumn: Month Year
+		sortByColumn: 'Month Sort'
+
+	column 'Month Sort'
+		dataType: int64
+		isHidden
+		lineageTag: a82448d3-d6a1-4a38-8048-d2efed9830a3
+		summarizeBy: none
+		sourceColumn: Month Sort
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 17aaf087-e3f7-42ef-a066-66adcf70fdb6
+		summarizeBy: none
+		sourceColumn: Month Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week Start'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 0fc83b8c-53dd-465a-aa6d-63c886d72add
+		summarizeBy: none
+		sourceColumn: Week Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week Label'
+		dataType: string
+		lineageTag: a4c0a95f-b710-4973-b689-1e51dd53d6f6
+		summarizeBy: none
+		sourceColumn: Week Label
+		sortByColumn: 'Week Start'
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: 27109730-406c-404d-be80-49c3a995d01c
+		summarizeBy: none
+		sourceColumn: Day Name
+		sortByColumn: 'Day Number'
+
+	column 'Day Number'
+		dataType: int64
+		isHidden
+		lineageTag: 54c351eb-42f8-4e3b-84c6-83fb70446713
+		summarizeBy: none
+		sourceColumn: Day Number
+
+	column 'Day Type'
+		dataType: string
+		lineageTag: 86898223-dfdc-4e72-b1f7-6b70d346a9c6
+		summarizeBy: none
+		sourceColumn: Day Type
+
+	hierarchy 'Calendar Hierarchy'
+		lineageTag: 08db2118-ec07-4490-b804-d8f92916eb76
+
+		level Year
+			lineageTag: ad12181e-dbcc-4b46-b587-3460fc16d63e
+			column: Year
+
+		level Month
+			lineageTag: 0630824c-c8f1-440e-947f-cb28a97669d7
+			column: 'Month Year'
+
+		level Date
+			lineageTag: a0be4024-d5e7-43e1-a4c4-472eb9b77e9b
+			column: Date
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Calendar sheet" = Source{[Item="Calendar",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Calendar sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Date Key", Int64.Type}, {"Date", type date}, {"Year", Int64.Type}, {"Month Number", Int64.Type}, {"Month Year", type text}, {"Month Sort", Int64.Type}, {"Month Start", type date}, {"Week Start", type date}, {"Week Label", type text}, {"Day Name", type text}, {"Day Number", Int64.Type}, {"Day Type", type text}})
+				in
+					#"Applied column types"
+

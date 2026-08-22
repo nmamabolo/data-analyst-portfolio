@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Calls","Agents","Queues","Calendar","SourceWorkbookPath"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Calls
+ref table Agents
+ref table Queues
+ref table Calendar
+ref table DateTableTemplate_11cd4560-1d85-438f-88e9-349b75d2e977
+ref table LocalDateTable_b9f1f334-fc29-4218-855c-5238f8f0cfd5
+ref table LocalDateTable_b34b089a-2f21-4209-933b-d48ad3733b72
+

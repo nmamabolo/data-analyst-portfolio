@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000008",
+  "position": {
+    "x": 650,
+    "y": 470,
+    "z": 8000,
+    "height": 200,
+    "width": 605,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Queues"
+                    }
+                  },
+                  "Property": "Queue Name"
+                }
+              },
+              "queryRef": "Queues.Queue Name",
+              "nativeQueryRef": "Queue Name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "SLA Rate"
+                }
+              },
+              "queryRef": "Calls.SLA Rate",
+              "nativeQueryRef": "SLA Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Abandonment Rate"
+                }
+              },
+              "queryRef": "Calls.Abandonment Rate",
+              "nativeQueryRef": "Abandonment Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Queues"
+                  }
+                },
+                "Property": "Queue Name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Queue Service Outcomes'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

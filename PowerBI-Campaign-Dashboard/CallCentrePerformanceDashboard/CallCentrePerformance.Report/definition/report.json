@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "customTheme": {
+      "name": "CallCentreExecutive-8f4c2a1d.json",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.1.0",
+        "page": "2.1.0"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "CallCentreExecutive-8f4c2a1d.json",
+          "path": "CallCentreExecutive-8f4c2a1d.json",
+          "type": "CustomTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "useEnhancedTooltips": false
+  }
+}

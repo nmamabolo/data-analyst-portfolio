@@ -1,0 +1,191 @@
+table Calls
+	lineageTag: 71101447-d46a-40d7-aca1-6429cb6ed3d1
+
+	/// Total incoming calls, including answered and abandoned contacts.
+	measure 'Total Calls' = COUNTROWS(Calls)
+		formatString: #,##0
+		lineageTag: d526e877-27ae-4bd2-af25-3c2410cfac3a
+
+	/// Calls successfully connected to an agent.
+	measure 'Answered Calls' = CALCULATE([Total Calls], KEEPFILTERS(Calls[Outcome] = "Answered"))
+		formatString: #,##0
+		lineageTag: 13b3bf86-68bd-4422-90ab-bf8018d893e3
+
+	/// Calls disconnected by the caller before an agent answered.
+	measure 'Abandoned Calls' = CALCULATE([Total Calls], KEEPFILTERS(Calls[Outcome] = "Abandoned"))
+		formatString: #,##0
+		lineageTag: 123328b1-0d72-455a-97c1-5bc4c26d0254
+
+	/// Share of total calls that were abandoned.
+	measure 'Abandonment Rate' = DIVIDE([Abandoned Calls], [Total Calls])
+		formatString: 0.0%
+		lineageTag: 24e1d489-0f07-4d01-8be1-2142985cdbd4
+
+	/// Average talk plus after-call work time for answered calls, in minutes.
+	measure 'Average Handle Time (min)' = DIVIDE(SUM(Calls[Handle Seconds]), [Answered Calls] * 60)
+		formatString: 0.0
+		lineageTag: 92da0aaf-6233-40c2-9a0f-844d32ad0ddc
+
+	/// Average caller wait before answer, in seconds.
+	measure 'Average Speed to Answer (sec)' = DIVIDE(CALCULATE(SUM(Calls[Wait Seconds]), Calls[Outcome] = "Answered"), [Answered Calls])
+		formatString: 0.0
+		lineageTag: 354e6796-3531-47a3-ab69-38663ee78467
+
+	/// Answered calls meeting the queue-specific wait-time target.
+	measure 'SLA Met Calls' = CALCULATE([Answered Calls], Calls[Answered Within SLA] = TRUE())
+		formatString: #,##0
+		lineageTag: f16d1078-ef58-40c7-9963-4c3e74c70623
+
+	/// Share of answered calls meeting the queue-specific SLA target.
+	measure 'SLA Rate' = DIVIDE([SLA Met Calls], [Answered Calls])
+		formatString: 0.0%
+		lineageTag: 0b0fef30-94fe-4fae-8c68-6959017a154c
+
+	/// Average post-call satisfaction score on a 1-to-5 scale.
+	measure 'Average CSAT' = AVERAGE(Calls[CSAT])
+		formatString: 0.00
+		lineageTag: 53b3a721-08b6-4244-8475-c4a111ff6ffb
+
+	/// Share of answered calls resolved on the first contact.
+	measure 'FCR Rate' = DIVIDE(CALCULATE([Answered Calls], Calls[First Call Resolution] = TRUE()), [Answered Calls])
+		formatString: 0.0%
+		lineageTag: 966ad34e-9e64-4301-924c-e4d387c2d62b
+
+	/// Change in total call volume versus the previous month.
+	measure 'Call Volume MoM %' = VAR PriorMonth = CALCULATE([Total Calls], DATEADD('Calendar'[Date], -1, MONTH)) RETURN DIVIDE([Total Calls] - PriorMonth, PriorMonth)
+		formatString: 0.0%
+		lineageTag: e3875caf-e787-4cc0-a044-a235cf79227f
+
+	/// Change in total call volume versus the previous week.
+	measure 'Call Volume WoW %' = VAR PriorWeek = CALCULATE([Total Calls], DATEADD('Calendar'[Date], -7, DAY)) RETURN DIVIDE([Total Calls] - PriorWeek, PriorWeek)
+		formatString: 0.0%
+		lineageTag: c1e68fd0-3ef8-48a2-9f6d-2ba6068ebf35
+
+	/// Calls handled per active agent in the current filter context.
+	measure 'Answered Calls per Agent' = DIVIDE([Answered Calls], CALCULATE(DISTINCTCOUNT(Calls[Agent Key]), Calls[Agent Key] > 0))
+		formatString: #,##0.0
+		lineageTag: 6dd0307a-11a8-4538-9399-27072163d6ce
+
+	column 'Call ID'
+		dataType: string
+		lineageTag: df61cfa5-6894-4827-bb20-d58e24a02934
+		summarizeBy: none
+		sourceColumn: Call ID
+
+	column 'Start Date Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7abcb847-b783-465b-94c9-c538ea0fb980
+		summarizeBy: none
+		sourceColumn: Start Date Time
+
+		variation Variation
+			isDefault
+			relationship: fa00f3c8-e5d5-4a6b-bd98-6909fc8282b3
+			defaultHierarchy: LocalDateTable_b9f1f334-fc29-4218-855c-5238f8f0cfd5.'Date Hierarchy'
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: c1e46db1-a86b-4746-8d0c-38e819bc39ad
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 300b9713-ba51-4eb1-a6b7-a3b8ea0b71c7
+			defaultHierarchy: LocalDateTable_b34b089a-2f21-4209-933b-d48ad3733b72.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: 7170246d-8d6c-49e5-8191-f02fb92e8bb0
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	column Hour
+		dataType: int64
+		lineageTag: 202ab0fc-2fb2-4f6c-b905-9af3b8163017
+		summarizeBy: sum
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agent Key'
+		dataType: int64
+		isHidden
+		lineageTag: db0963ab-a38e-4ae0-b065-523871f6e511
+		summarizeBy: none
+		sourceColumn: Agent Key
+
+	column 'Queue Key'
+		dataType: int64
+		isHidden
+		lineageTag: d1d14b4e-c752-4134-a68d-1bdf5ef4b32b
+		summarizeBy: none
+		sourceColumn: Queue Key
+
+	column Outcome
+		dataType: string
+		lineageTag: 46d5d391-d2b3-4542-a7b4-532eba2b2e22
+		summarizeBy: none
+		sourceColumn: Outcome
+
+	column 'Wait Seconds'
+		dataType: int64
+		lineageTag: 777ea9b4-962d-45b4-b7ad-afd09438e365
+		summarizeBy: sum
+		sourceColumn: Wait Seconds
+
+	column 'Talk Seconds'
+		dataType: int64
+		lineageTag: 85fa1749-74b7-480a-8082-d8202440efd4
+		summarizeBy: sum
+		sourceColumn: Talk Seconds
+
+	column 'After Call Seconds'
+		dataType: int64
+		lineageTag: f2d8edbd-9c93-4390-95fe-7e3ed5824cb4
+		summarizeBy: sum
+		sourceColumn: After Call Seconds
+
+	column 'Handle Seconds'
+		dataType: int64
+		lineageTag: 618b387a-674a-4dda-a3ab-2c7fd7365b28
+		summarizeBy: sum
+		sourceColumn: Handle Seconds
+
+	column 'Answered Within SLA'
+		dataType: boolean
+		lineageTag: 2bb1e0e2-5046-47ef-a09e-9ef916b21a90
+		summarizeBy: none
+		sourceColumn: Answered Within SLA
+
+	column CSAT
+		dataType: double
+		formatString: 0.0
+		lineageTag: 3c6b01b5-1e0b-481c-8948-94cfdcbaac6f
+		summarizeBy: sum
+		sourceColumn: CSAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Call Resolution'
+		dataType: boolean
+		lineageTag: e1fb688a-4315-438d-892e-f43f22508ce2
+		summarizeBy: none
+		sourceColumn: First Call Resolution
+
+	partition Calls = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Calls sheet" = Source{[Item="Calls",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Calls sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Call ID", type text}, {"Start Date Time", type datetime}, {"Date", type date}, {"Date Key", Int64.Type}, {"Hour", Int64.Type}, {"Agent Key", Int64.Type}, {"Queue Key", Int64.Type}, {"Outcome", type text}, {"Wait Seconds", Int64.Type}, {"Talk Seconds", Int64.Type}, {"After Call Seconds", Int64.Type}, {"Handle Seconds", Int64.Type}, {"Answered Within SLA", type logical}, {"CSAT", type number}, {"First Call Resolution", type logical}})
+				in
+					#"Applied column types"
+

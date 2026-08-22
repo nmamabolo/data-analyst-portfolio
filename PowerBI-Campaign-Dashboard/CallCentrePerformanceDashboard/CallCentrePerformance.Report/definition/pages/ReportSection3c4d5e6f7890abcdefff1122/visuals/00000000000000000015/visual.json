@@ -1,0 +1,151 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000015",
+  "position": {
+    "x": 24,
+    "y": 250,
+    "z": 21000,
+    "height": 420,
+    "width": 515,
+    "tabOrder": 21000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Queues"
+                    }
+                  },
+                  "Property": "Queue Name"
+                }
+              },
+              "queryRef": "Queues.Queue Name",
+              "nativeQueryRef": "Queue Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Total Calls"
+                }
+              },
+              "queryRef": "Calls.Total Calls",
+              "nativeQueryRef": "Total Calls"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Answered Calls"
+                }
+              },
+              "queryRef": "Calls.Answered Calls",
+              "nativeQueryRef": "Answered Calls"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "SLA Rate"
+                }
+              },
+              "queryRef": "Calls.SLA Rate",
+              "nativeQueryRef": "SLA Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Abandonment Rate"
+                }
+              },
+              "queryRef": "Calls.Abandonment Rate",
+              "nativeQueryRef": "Abandonment Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calls"
+                    }
+                  },
+                  "Property": "Average Handle Time (min)"
+                }
+              },
+              "queryRef": "Calls.Average Handle Time (min)",
+              "nativeQueryRef": "Average Handle Time (min)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Queue Performance'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
