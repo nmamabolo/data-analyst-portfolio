@@ -1,4 +1,4 @@
-# 📈 Power BI — BPO Campaign Performance Dashboard
+# 📈 Power BI — BPO Campaign Dashboards
 
 A Power BI project modelling a **multi-campaign contact-centre**: a clean star schema, a full DAX measures library, and a three-page report design (Executive Overview · Campaign Performance · Agent Scorecard).
 
