@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["WorkLog","Employees","Departments","Clients","Calendar","Monthly Targets","SourceWorkbookPath"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table WorkLog
+ref table Employees
+ref table Departments
+ref table Clients
+ref table Calendar
+ref table 'Monthly Targets'
+ref table DateTableTemplate_7ba5698a-2698-4b8c-8b71-357eba83d976
+ref table LocalDateTable_252a38c7-65fb-480e-8f0b-6c93281a16b9
+ref table LocalDateTable_fbf95019-d684-43a0-9df5-80908e42938e
+ref table LocalDateTable_2c8736f0-4c06-4be5-a36c-eb5633ea9de0
+

@@ -1,0 +1,32 @@
+table Departments
+	lineageTag: 77b1996c-6485-4b3e-9ad0-1cd29467363c
+
+	column 'Department Key'
+		dataType: int64
+		lineageTag: e7e8197d-db5c-4ef9-936b-81e930071398
+		summarizeBy: none
+		sourceColumn: Department Key
+
+	column Department
+		dataType: string
+		lineageTag: 717fe1fa-7734-4e51-89b3-bbab3b780718
+		summarizeBy: none
+		sourceColumn: Department
+
+	column Description
+		dataType: string
+		lineageTag: 839859d8-45fd-4fd5-a868-7422d63f83e1
+		summarizeBy: none
+		sourceColumn: Description
+
+	partition Departments = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Departments sheet" = Source{[Item="Departments",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Departments sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Department Key", Int64.Type}, {"Department", type text}, {"Description", type text}})
+				in
+					#"Applied column types"
+

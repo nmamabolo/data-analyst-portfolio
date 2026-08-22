@@ -1,0 +1,178 @@
+table WorkLog
+	lineageTag: 4af0d327-7a63-422e-a8ae-a041fa4916e1
+
+	/// Recognized revenue from billable work.
+	measure 'Actual Revenue' = SUM(WorkLog[Revenue])
+		formatString: $#,##0
+		lineageTag: 1084dbed-a75e-43ed-9807-bc43dc5be043
+
+	/// Planned revenue for the selected months and departments.
+	measure 'Revenue Target' = CALCULATE(SUM('Monthly Targets'[Target Revenue]), TREATAS(VALUES(Calendar[Month Key]), 'Monthly Targets'[Month Key]))
+		formatString: $#,##0
+		lineageTag: a2a8257d-d22b-4192-88dd-a84a0b0930d6
+
+	measure 'Revenue Variance' = [Actual Revenue] - [Revenue Target]
+		formatString: $#,##0;($#,##0);-
+		lineageTag: cdecdbf7-2781-42b3-b38b-55b769386ad3
+
+	measure 'Revenue Variance %' = DIVIDE([Revenue Variance], [Revenue Target])
+		formatString: 0.0%
+		lineageTag: 8fcd46b1-c6bb-460a-abd0-d28daba4c445
+
+	measure 'Total Billable Hours' = SUM(WorkLog[Billable Hours])
+		formatString: #,##0.0
+		lineageTag: 872a8ca8-a1b9-465d-967c-55913e785d58
+
+	measure 'Total Available Hours' = SUM(WorkLog[Available Hours])
+		formatString: #,##0.0
+		lineageTag: 86baa7ea-d6c8-420d-a8f4-2b0cf19471be
+
+	measure 'Productivity Rate' = DIVIDE([Total Billable Hours], [Total Available Hours])
+		formatString: 0.0%
+		lineageTag: 4dabd5a6-07d3-48c2-b191-4b077ced8a0a
+
+	measure 'Target Billable Hours' = CALCULATE(SUM('Monthly Targets'[Target Billable Hours]), TREATAS(VALUES(Calendar[Month Key]), 'Monthly Targets'[Month Key]))
+		formatString: #,##0.0
+		lineageTag: 375d1f2c-3cf2-46a9-8e56-f612f9981430
+
+	measure 'Active Staff' = DISTINCTCOUNT(WorkLog[Employee Key])
+		formatString: #,##0
+		lineageTag: 38b17854-4146-4ab5-9742-018ae3c22307
+
+	measure 'Average Active Staff' = AVERAGEX(VALUES(Calendar[Month Key]), CALCULATE([Active Staff]))
+		formatString: #,##0.0
+		lineageTag: c7ff88e0-00c8-4a1f-bebf-0057ba5457f9
+
+	measure 'Planned Headcount' = AVERAGEX(VALUES(Calendar[Month Key]), CALCULATE(SUM('Monthly Targets'[Planned Headcount]), TREATAS(VALUES(Calendar[Month Key]), 'Monthly Targets'[Month Key])))
+		formatString: #,##0.0
+		lineageTag: 3f90ac9d-ca67-45c3-8fcd-5e32044b5618
+
+	measure 'Headcount Variance' = [Average Active Staff] - [Planned Headcount]
+		formatString: #,##0.0;(#,##0.0);-
+		lineageTag: 7f0bc8b4-bf75-44cb-a6cc-e12170b16216
+
+	measure 'Revenue per Billable Hour' = DIVIDE([Actual Revenue], [Total Billable Hours])
+		formatString: $#,##0.00
+		lineageTag: 3fb5bc16-a18a-412c-bf2e-0eddb19f59d2
+
+	measure 'Projected Revenue' = SUMX(VALUES(Calendar[Month Key]), VAR ThisMonth = Calendar[Month Key] VAR LastActual = CALCULATE(MAX(WorkLog[Date]), REMOVEFILTERS(Calendar)) VAR LastMonth = YEAR(LastActual) * 100 + MONTH(LastActual) VAR ActualRevenue = CALCULATE([Actual Revenue], Calendar[Month Key] = ThisMonth) VAR ActualDays = CALCULATE(DISTINCTCOUNT(WorkLog[Date]), Calendar[Month Key] = ThisMonth) VAR Workdays = CALCULATE(COUNTROWS(Calendar), Calendar[Month Key] = ThisMonth, Calendar[Is Workday] = TRUE()) RETURN IF(ThisMonth = LastMonth, DIVIDE(ActualRevenue, ActualDays) * Workdays, ActualRevenue))
+		formatString: $#,##0
+		lineageTag: b1538c47-6076-470f-8c2c-e176aa1711cb
+
+	measure 'Latest Month Projection' = VAR LastActual = CALCULATE(MAX(WorkLog[Date]), REMOVEFILTERS(Calendar)) VAR LastMonth = YEAR(LastActual) * 100 + MONTH(LastActual) RETURN CALCULATE([Projected Revenue], REMOVEFILTERS(Calendar), Calendar[Month Key] = LastMonth)
+		formatString: $#,##0
+		lineageTag: a099cb10-4cd7-4b42-9083-f95fd2398949
+
+	measure 'Latest Month Target' = VAR LastActual = CALCULATE(MAX(WorkLog[Date]), REMOVEFILTERS(Calendar)) VAR LastMonth = YEAR(LastActual) * 100 + MONTH(LastActual) RETURN CALCULATE([Revenue Target], REMOVEFILTERS(Calendar), Calendar[Month Key] = LastMonth)
+		formatString: $#,##0
+		lineageTag: 08f81dfc-aaa0-438d-8650-e60c8a08f79c
+
+	measure 'Projection vs Target %' = DIVIDE([Latest Month Projection] - [Latest Month Target], [Latest Month Target])
+		formatString: 0.0%
+		lineageTag: 50b3c8e1-a252-4ecd-9eef-afe15a3bbf22
+
+	column 'Log ID'
+		dataType: int64
+		lineageTag: c379a3a9-010b-4f89-bd63-fa7d696fe83f
+		summarizeBy: count
+		sourceColumn: Log ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 3d2c7466-9e37-43ed-a8fc-fa5f507086bb
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: ab7a1b60-6bf9-47db-b921-f48c55e9dc4c
+			defaultHierarchy: LocalDateTable_252a38c7-65fb-480e-8f0b-6c93281a16b9.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date Key'
+		dataType: int64
+		lineageTag: 9d90415b-4a6b-4b4d-801b-dc1f3d7bbc0a
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	column 'Month Key'
+		dataType: int64
+		lineageTag: c44b7f5b-9a39-42df-9cd9-c0ad5d0976db
+		summarizeBy: count
+		sourceColumn: Month Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Key'
+		dataType: int64
+		lineageTag: abfa8f3b-1ec6-4964-bb5b-f30282479882
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+	column 'Client Key'
+		dataType: int64
+		lineageTag: 7af85822-a8f7-4f38-ab94-b95acf4c8c44
+		summarizeBy: none
+		sourceColumn: Client Key
+
+	column 'Available Hours'
+		dataType: double
+		lineageTag: a848c290-c321-459d-ac3a-c4faf9bb59cb
+		summarizeBy: sum
+		sourceColumn: Available Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billable Hours'
+		dataType: double
+		lineageTag: b848f1ea-b85f-4b16-b544-dc8eccc9145d
+		summarizeBy: sum
+		sourceColumn: Billable Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Non-Billable Hours'
+		dataType: double
+		lineageTag: 6742fe13-2e56-4a0c-b0f8-4ffc5042e3c3
+		summarizeBy: sum
+		sourceColumn: Non-Billable Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: double
+		lineageTag: 47e2c811-f79e-4a94-b634-fe31a575e2c7
+		summarizeBy: sum
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Labor Cost'
+		dataType: double
+		lineageTag: 835e78ad-3617-4cb8-86a7-3172c9edb531
+		summarizeBy: sum
+		sourceColumn: Labor Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Status'
+		dataType: string
+		lineageTag: 7de93f98-31fe-4f2e-badc-742d5715178e
+		summarizeBy: none
+		sourceColumn: Work Status
+
+	partition WorkLog = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected WorkLog sheet" = Source{[Item="WorkLog",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected WorkLog sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Log ID", Int64.Type}, {"Date", type date}, {"Date Key", Int64.Type}, {"Month Key", Int64.Type}, {"Employee Key", Int64.Type}, {"Client Key", Int64.Type}, {"Available Hours", type number}, {"Billable Hours", type number}, {"Non-Billable Hours", type number}, {"Revenue", type number}, {"Labor Cost", type number}, {"Work Status", type text}})
+				in
+					#"Applied column types"
+

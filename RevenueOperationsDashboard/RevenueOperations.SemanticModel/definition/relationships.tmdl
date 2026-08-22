@@ -1,0 +1,35 @@
+relationship 'WorkLog to Calendar'
+	fromColumn: WorkLog.'Date Key'
+	toColumn: Calendar.'Date Key'
+
+relationship 'WorkLog to Employees'
+	fromColumn: WorkLog.'Employee Key'
+	toColumn: Employees.'Employee Key'
+
+relationship 'WorkLog to Clients'
+	fromColumn: WorkLog.'Client Key'
+	toColumn: Clients.'Client Key'
+
+relationship 'Employees to Departments'
+	fromColumn: Employees.'Department Key'
+	toColumn: Departments.'Department Key'
+
+relationship 'Targets to Departments'
+	fromColumn: 'Monthly Targets'.'Department Key'
+	toColumn: Departments.'Department Key'
+
+relationship ab7a1b60-6bf9-47db-b921-f48c55e9dc4c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: WorkLog.Date
+	toColumn: LocalDateTable_252a38c7-65fb-480e-8f0b-6c93281a16b9.Date
+
+relationship 97008cb3-693f-4634-b29e-f2f4ce5dea6d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.'Hire Date'
+	toColumn: LocalDateTable_fbf95019-d684-43a0-9df5-80908e42938e.Date
+
+relationship 54abcf24-3dba-4859-9567-4779713839e0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.'End Date'
+	toColumn: LocalDateTable_2c8736f0-4c06-4be5-a36c-eb5633ea9de0.Date
+

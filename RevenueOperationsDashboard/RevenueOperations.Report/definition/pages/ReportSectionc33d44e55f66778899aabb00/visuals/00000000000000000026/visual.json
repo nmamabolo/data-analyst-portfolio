@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000026",
+  "position": {
+    "x": 650,
+    "y": 470,
+    "z": 38000,
+    "height": 200,
+    "width": 605,
+    "tabOrder": 38000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Departments"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "Departments.Department",
+              "nativeQueryRef": "Department"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Average Active Staff"
+                }
+              },
+              "queryRef": "WorkLog.Average Active Staff",
+              "nativeQueryRef": "Average Active Staff"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Planned Headcount"
+                }
+              },
+              "queryRef": "WorkLog.Planned Headcount",
+              "nativeQueryRef": "Planned Headcount"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Headcount Variance"
+                }
+              },
+              "queryRef": "WorkLog.Headcount Variance",
+              "nativeQueryRef": "Headcount Variance"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Latest Month Projection"
+                }
+              },
+              "queryRef": "WorkLog.Latest Month Projection",
+              "nativeQueryRef": "Latest Month Projection"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Department Forecast Summary'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

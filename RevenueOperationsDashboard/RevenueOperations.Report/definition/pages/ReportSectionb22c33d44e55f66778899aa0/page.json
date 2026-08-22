@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSectionb22c33d44e55f66778899aa0",
+  "displayName": "Operations & Productivity",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

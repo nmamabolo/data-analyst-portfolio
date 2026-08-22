@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000018",
+  "position": {
+    "x": 650,
+    "y": 250,
+    "z": 24000,
+    "height": 200,
+    "width": 605,
+    "tabOrder": 24000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Departments"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "Departments.Department",
+              "nativeQueryRef": "Department",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Productivity Rate"
+                }
+              },
+              "queryRef": "WorkLog.Productivity Rate",
+              "nativeQueryRef": "Productivity Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Departments"
+                  }
+                },
+                "Property": "Department"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Productivity by Department'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

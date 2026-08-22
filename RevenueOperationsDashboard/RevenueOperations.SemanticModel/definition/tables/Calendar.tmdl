@@ -1,0 +1,92 @@
+table Calendar
+	lineageTag: b1320060-89c0-4428-a5f2-82d6d9c012a7
+	dataCategory: Time
+
+	column 'Date Key'
+		dataType: int64
+		lineageTag: d4ba0da4-1a94-40fb-a46e-5df9cdadfa9c
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 436a590e-b6cc-45f1-9e99-2a6a33d5de78
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		lineageTag: 8169d273-217f-4cc6-b727-6ae6e7841256
+		summarizeBy: none
+		sourceColumn: Year
+
+	column 'Month Number'
+		dataType: int64
+		lineageTag: 7546ddc6-2104-4cd7-a52b-b7510d189ae1
+		summarizeBy: none
+		sourceColumn: Month Number
+
+	column 'Month Key'
+		dataType: int64
+		lineageTag: 0c9aa22a-f57d-45d8-8ce9-c3a0a54494a2
+		summarizeBy: none
+		sourceColumn: Month Key
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: a3e70b46-a015-4260-824c-1ea3ffce2f8f
+		summarizeBy: none
+		sourceColumn: Month Year
+		sortByColumn: 'Month Key'
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cf90e9bb-4b7d-4a28-85f1-f05343d33d68
+		summarizeBy: none
+		sourceColumn: Month Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3c7603eb-10d4-4909-a608-3924bd7bb301
+		summarizeBy: none
+		sourceColumn: Week Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week Label'
+		dataType: string
+		lineageTag: 79cd2f85-190a-4460-a416-39df44ad63e8
+		summarizeBy: none
+		sourceColumn: Week Label
+		sortByColumn: 'Week Start'
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: ac746a3c-3d86-4e5b-a4c3-df042b2b02db
+		summarizeBy: none
+		sourceColumn: Day Name
+
+	column 'Is Workday'
+		dataType: boolean
+		lineageTag: 538cd21a-0302-4362-a299-9bb4b1df61ed
+		summarizeBy: none
+		sourceColumn: Is Workday
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Calendar sheet" = Source{[Item="Calendar",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Calendar sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Date Key", Int64.Type}, {"Date", type date}, {"Year", Int64.Type}, {"Month Number", Int64.Type}, {"Month Key", Int64.Type}, {"Month Year", type text}, {"Month Start", type date}, {"Week Start", type date}, {"Week Label", type text}, {"Day Name", type text}, {"Is Workday", type logical}})
+				in
+					#"Applied column types"
+

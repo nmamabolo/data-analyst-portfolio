@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-08-10T15:01:09.305Z",
+  "dataset": {
+    "workLogRows": 6703,
+    "employees": 30,
+    "departments": 3,
+    "clients": 12,
+    "targetRows": 36,
+    "actualStart": "2025-09-01",
+    "actualEnd": "2026-08-09",
+    "synthetic": true
+  },
+  "model": {
+    "tables": 6,
+    "measures": 17,
+    "relationships": 5
+  },
+  "report": {
+    "pages": 3,
+    "visuals": 38,
+    "kpiCards": 15
+  }
+}

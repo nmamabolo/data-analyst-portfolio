@@ -1,0 +1,62 @@
+table 'Monthly Targets'
+	lineageTag: ef7162a9-ce7b-45a7-93d4-64411fae0737
+
+	column 'Month Key'
+		dataType: int64
+		lineageTag: 29155119-1c2a-412a-a46b-9bfc23be3c76
+		summarizeBy: none
+		sourceColumn: Month Key
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: 455fbd93-18bf-4e2d-bb85-783fc47cfae2
+		summarizeBy: none
+		sourceColumn: Month Year
+
+	column 'Department Key'
+		dataType: int64
+		lineageTag: db6cf062-e75c-4925-9db4-aad8eb28c4de
+		summarizeBy: none
+		sourceColumn: Department Key
+
+	column 'Target Revenue'
+		dataType: double
+		lineageTag: 7ecc2847-c705-4d5c-b989-f2a00580a751
+		summarizeBy: none
+		sourceColumn: Target Revenue
+
+	column 'Target Billable Hours'
+		dataType: double
+		lineageTag: 60197700-5460-425a-be30-065fdd9ac94a
+		summarizeBy: none
+		sourceColumn: Target Billable Hours
+
+	column 'Target Utilization'
+		dataType: double
+		lineageTag: 82a388e1-a070-4e5e-b8cc-0d986bb32d8b
+		summarizeBy: none
+		sourceColumn: Target Utilization
+
+	column 'Planned Headcount'
+		dataType: int64
+		lineageTag: eef7a0da-b1d2-4942-b71c-44c93a081d8a
+		summarizeBy: none
+		sourceColumn: Planned Headcount
+
+	column Workdays
+		dataType: int64
+		lineageTag: bac9c1cf-5c63-4920-89fa-3d2279eceb01
+		summarizeBy: none
+		sourceColumn: Workdays
+
+	partition 'Monthly Targets' = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Monthly Targets sheet" = Source{[Item="Monthly Targets",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Monthly Targets sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Month Key", Int64.Type}, {"Month Year", type text}, {"Department Key", Int64.Type}, {"Target Revenue", type number}, {"Target Billable Hours", type number}, {"Target Utilization", type number}, {"Planned Headcount", Int64.Type}, {"Workdays", Int64.Type}})
+				in
+					#"Applied column types"
+

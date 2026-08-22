@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "00000000000000000019",
+  "position": {
+    "x": 650,
+    "y": 470,
+    "z": 25000,
+    "height": 200,
+    "width": 605,
+    "tabOrder": 25000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Employees"
+                    }
+                  },
+                  "Property": "Employee Name"
+                }
+              },
+              "queryRef": "Employees.Employee Name",
+              "nativeQueryRef": "Employee Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Actual Revenue"
+                }
+              },
+              "queryRef": "WorkLog.Actual Revenue",
+              "nativeQueryRef": "Actual Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Total Billable Hours"
+                }
+              },
+              "queryRef": "WorkLog.Total Billable Hours",
+              "nativeQueryRef": "Total Billable Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WorkLog"
+                    }
+                  },
+                  "Property": "Productivity Rate"
+                }
+              },
+              "queryRef": "WorkLog.Productivity Rate",
+              "nativeQueryRef": "Productivity Rate"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Employee Productivity Scorecard'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

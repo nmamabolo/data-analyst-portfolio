@@ -1,0 +1,38 @@
+table Clients
+	lineageTag: d4a76984-6f65-4c8a-aab3-8af58ee23e42
+
+	column 'Client Key'
+		dataType: int64
+		lineageTag: 64589985-98d6-4702-a1bd-635c826322fb
+		summarizeBy: none
+		sourceColumn: Client Key
+
+	column Client
+		dataType: string
+		lineageTag: 195e33f7-a33d-45d4-b173-0c573fa2b47b
+		summarizeBy: none
+		sourceColumn: Client
+
+	column Industry
+		dataType: string
+		lineageTag: d5a63d67-34b4-4ab1-abc0-927797de2955
+		summarizeBy: none
+		sourceColumn: Industry
+
+	column Segment
+		dataType: string
+		lineageTag: c1524507-fcf0-4f4e-9bca-7b71a22e79b2
+		summarizeBy: none
+		sourceColumn: Segment
+
+	partition Clients = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Clients sheet" = Source{[Item="Clients",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Clients sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Client Key", Int64.Type}, {"Client", type text}, {"Industry", type text}, {"Segment", type text}})
+				in
+					#"Applied column types"
+

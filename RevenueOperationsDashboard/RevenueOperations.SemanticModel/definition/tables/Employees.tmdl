@@ -1,0 +1,86 @@
+table Employees
+	lineageTag: 9107e934-aa2f-488a-b851-84862e43ed21
+
+	column 'Employee Key'
+		dataType: int64
+		lineageTag: ff8ed5b0-5162-4320-9ea8-7c49a98e2d18
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+	column 'Employee ID'
+		dataType: string
+		lineageTag: 81e24756-4882-4fb5-b5ed-997727d6e1c8
+		summarizeBy: none
+		sourceColumn: Employee ID
+
+	column 'Employee Name'
+		dataType: string
+		lineageTag: 5d32e572-e2d5-41f2-9e8e-c06d531ac8be
+		summarizeBy: none
+		sourceColumn: Employee Name
+
+	column 'Department Key'
+		dataType: int64
+		lineageTag: c44672c4-116a-4374-9096-12cd828389eb
+		summarizeBy: none
+		sourceColumn: Department Key
+
+	column Role
+		dataType: string
+		lineageTag: 8eda1a6e-e918-4890-847d-21e53e09bb2f
+		summarizeBy: none
+		sourceColumn: Role
+
+	column 'Billing Rate'
+		dataType: double
+		lineageTag: af61a0a9-e594-4358-b61f-321a6ea1a412
+		summarizeBy: sum
+		sourceColumn: Billing Rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hire Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5b7e3633-7cc9-40d9-881e-4e078b0f277b
+		summarizeBy: none
+		sourceColumn: Hire Date
+
+		variation Variation
+			isDefault
+			relationship: 97008cb3-693f-4634-b29e-f2f4ce5dea6d
+			defaultHierarchy: LocalDateTable_fbf95019-d684-43a0-9df5-80908e42938e.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 04e32ae3-a22d-4b05-a014-5122c6a5befc
+		summarizeBy: none
+		sourceColumn: End Date
+
+		variation Variation
+			isDefault
+			relationship: 54abcf24-3dba-4859-9567-4779713839e0
+			defaultHierarchy: LocalDateTable_2c8736f0-4c06-4be5-a36c-eb5633ea9de0.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Location
+		dataType: string
+		lineageTag: 4f250189-04a1-49f4-9a2b-6ab0c6921c6f
+		summarizeBy: none
+		sourceColumn: Location
+
+	partition Employees = m
+		mode: import
+		source =
+				let
+					Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+					#"Selected Employees sheet" = Source{[Item="Employees",Kind="Sheet"]}[Data],
+					#"Promoted column headers" = Table.PromoteHeaders(#"Selected Employees sheet", [PromoteAllScalars=true]),
+					#"Applied column types" = Table.TransformColumnTypes(#"Promoted column headers", {{"Employee Key", Int64.Type}, {"Employee ID", type text}, {"Employee Name", type text}, {"Department Key", Int64.Type}, {"Role", type text}, {"Billing Rate", type number}, {"Hire Date", type date}, {"End Date", type date}, {"Location", type text}})
+				in
+					#"Applied column types"
+
