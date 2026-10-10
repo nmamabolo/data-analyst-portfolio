@@ -107,6 +107,38 @@ The rollover ladder works like this:
 - **Leverage helps only a little.** It speeds compounding, but the drawdowns grow in proportion.
 - **Drawdowns are understated.** These simulations run on monthly *average* prices, which hide part of each drawdown. Real drawdowns at 2× would be deeper than shown.
 
+### In rand: R15,000 a month of bills
+
+`rand_plan.py` reruns the plan for **R15,000 a month**:
+- **Conversion:** R15,000 is $900 at R16.67/$, the latest rate in the data (2 Oct 2026).
+- **Inflation:** the bills grow **3% a year in dollar terms**, which is SA inflation (~5–6%) less the rand's usual yearly slide against the dollar.
+- **Payout rate:** with inflation included, the safe payout falls to **0.5% a month** (about 9% return minus 3% inflation). Covering the bills therefore needs about **R3 million** in today's money.
+
+All rand figures are in today's money.
+
+| Starting with | Monthly top-up | Bills covered after (median) |
+|---|---|---|
+| $10,000 (≈R167,000) | none | not within 40 years |
+| | R2,500 | **30 years** |
+| | R5,000 | **23 years** |
+| | R10,000 | **15 years** |
+| R10,000 | none | not within 40 years |
+| | R2,500 | 36 years |
+| | R5,000 | 26 years |
+| | R10,000 | 17 years |
+
+![Rand plan](results/rand_plan.png)
+
+| Without the ladder | $10,000 start | R10,000 start |
+|---|---|---|
+| Take R15,000/month from day one | lasts **11 months** | can't pay one month |
+| Pay out 0.5% a month | **≈R830/month** | **≈R50/month** |
+
+**What this shows:**
+- **The monthly top-up decides the timeline, not the starting amount.** Starting with $10k instead of R10k saves only 2–6 years.
+- **Borrowing doesn't help in rand.** Borrowing costs about prime (~10%), so 1.5× leverage with an R5,000 top-up is *slower* (23.4 years) than no leverage (22.6 years).
+- **The paycheck lags inflation between steps.** It rises in 25% steps while bills rise every year, so the paycheck runs slightly behind inflation between steps.
+
 ## 5. Honest caveats
 
 - **Monthly averages.** S&P and gold monthly data are monthly averages. I skip a month between signal and trade to remove the resulting look-ahead, but volatility and drawdowns are still understated. Real Sharpe ratios are probably about 20% lower.
@@ -122,6 +154,7 @@ The rollover ladder works like this:
 pip install -r requirements.txt
 python -m factory.run      # creates + tests 33,096 strategies, real and shuffled (~13 min; downloads ~170 MB once)
 python -m factory.report   # portfolio, final test, income plans, charts
+python -m factory.rand_plan  # the same plans for R15,000/month of bills, in today's rand
 ```
 
 **Data sources** (pinned commits, downloaded on demand, not redistributed):

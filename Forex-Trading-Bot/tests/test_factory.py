@@ -72,3 +72,16 @@ def test_deposits_stop_once_the_paycheck_starts():
     assert equity[first - 1] == pytest.approx(10_000 + 500 * first)   # reached the $20k milestone by saving
     assert paid[first] == pytest.approx(120)
     assert equity[-1] == pytest.approx(equity[first] - 120 * (len(paid) - first - 1))
+
+
+def test_bills_grow_with_inflation_and_the_milestone_moves():
+    # Flat returns, deposits only: with 12% a year bill growth the milestone keeps moving away.
+    from factory.income import bill_path
+    bills = bill_path(25, 100, 0.12)
+    assert bills[12] == pytest.approx(112) and bills[24] == pytest.approx(125.44)
+    equity, paid = run_policy(np.zeros(25), "fixed", bill=100, bill_growth=0.12)
+    assert paid[12] == pytest.approx(112)
+    _, paid = run_policy(np.zeros(60), "ladder", bill=60, rate=0.005, deposit=200, bill_growth=0.12)
+    first = np.argmax(paid > 0)
+    target = bill_path(60, 60, 0.12)[first] / 0.005      # milestone measured in that month's money
+    assert paid[first] == pytest.approx(0.005 * target)

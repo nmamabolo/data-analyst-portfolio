@@ -9,6 +9,8 @@ Policies (all start with $10,000, money is withdrawn at each month end):
              steps down a level only if the account falls 20% below its milestone.
 Optional `deposit`: money added every month until the paycheck starts (a top-up
 from a salary while the account is still being built).
+Optional `bill_growth`: yearly inflation of the bills. The ladder's first milestone
+moves with it, and "covered" means the paycheck meets that month's inflated bill.
 """
 import numpy as np
 import pandas as pd
@@ -16,24 +18,29 @@ import pandas as pd
 START = 10_000.0
 
 
+def bill_path(months: int, bill: float, bill_growth: float = 0.0) -> np.ndarray:
+    return bill * (1 + bill_growth) ** (np.arange(months) / 12)
+
+
 def run_policy(returns: np.ndarray, policy: str, bill: float = 1_000.0, rate: float = 0.006,
-               step: float = 1.25, start: float = START, deposit: float = 0.0):
+               step: float = 1.25, start: float = START, deposit: float = 0.0, bill_growth: float = 0.0):
     """Returns (equity path, withdrawals path) for one sequence of monthly returns."""
     n = len(returns)
     equity = np.empty(n)
     paid = np.zeros(n)
+    bills = bill_path(n, bill, bill_growth)
     eq = start
-    first_milestone = max(start, bill / rate) if policy == "ladder" else None
+    first_milestone = None
     level = 0.0   # current milestone the paycheck is based on (0 = still compounding)
     for t, r in enumerate(returns):
         eq *= 1 + r
         if policy == "fixed":
-            take = min(bill, max(eq, 0))
+            take = min(bills[t], max(eq, 0))
         elif policy == "percent":
             take = rate * max(eq, 0)
         else:  # ladder
-            if level == 0 and eq >= first_milestone:
-                level = first_milestone
+            if level == 0 and eq >= max(start, bills[t] / rate):
+                level = first_milestone = max(start, bills[t] / rate)
             if level:
                 while eq >= level * step:
                     level *= step
@@ -62,8 +69,8 @@ def monte_carlo(returns: pd.Series, policy: str, years: int = 10, n_paths: int =
     sims = block_bootstrap(returns, months, n_paths)
     eqs, pays = zip(*(run_policy(p, policy, **kw) for p in sims))
     eqs, pays = np.array(eqs), np.array(pays)
-    bill = kw.get("bill", 1_000.0)
-    covers = pays >= bill * 0.999
+    bills = bill_path(months, kw.get("bill", 1_000.0), kw.get("bill_growth", 0.0))
+    covers = pays >= bills * 0.999
     first_cover = np.where(covers.any(axis=1), covers.argmax(axis=1) / 12, np.inf)
     full_months = np.where((~covers).any(axis=1), (~covers).argmax(axis=1), months)
     yearly_income = pays.reshape(n_paths, years, 12).sum(axis=2) / 12   # average monthly income each year
@@ -78,7 +85,7 @@ def monte_carlo(returns: pd.Series, policy: str, years: int = 10, n_paths: int =
         "median_monthly_income_year10": float(np.median(yearly_income[:, min(9, years - 1)])),
         "median_monthly_income_final_year": float(np.median(yearly_income[:, -1])),
         "years": years,
-        "p_account_below_5k": float((eqs.min(axis=1) < 5_000).mean()),
+        "p_account_below_half_start": float((eqs.min(axis=1) < 0.5 * kw.get("start", START)).mean()),
         "p_account_wiped_out": float((eqs[:, -1] <= 100).mean()),
         "median_final_equity": float(np.median(eqs[:, -1])),
         "total_paid_median": float(np.median(pays.sum(axis=1))),

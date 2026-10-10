@@ -125,6 +125,6 @@ if __name__ == "__main__":
     t = main()
     cols = ["leverage", "policy", "deposit", "median_months_bills_paid_in_full", "median_years_until_bills_covered",
             "p_bills_covered_by_year_10", "median_monthly_income_year1", "median_monthly_income_year5",
-            "median_monthly_income_year10", "median_monthly_income_final_year", "years", "p_account_below_5k",
+            "median_monthly_income_year10", "median_monthly_income_final_year", "years", "p_account_below_half_start",
             "median_final_equity"]
     print(t.reindex(columns=cols).round(2).to_string(index=False))

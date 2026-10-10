@@ -1,4 +1,4 @@
-policy,bill,median_years_until_bills_covered,median_months_bills_paid_in_full,p_bills_covered_by_year_5,p_bills_covered_by_year_10,median_monthly_income_year1,median_monthly_income_year5,median_monthly_income_year10,median_monthly_income_final_year,years,p_account_below_5k,p_account_wiped_out,median_final_equity,total_paid_median,leverage,rate,deposit
+policy,bill,median_years_until_bills_covered,median_months_bills_paid_in_full,p_bills_covered_by_year_5,p_bills_covered_by_year_10,median_monthly_income_year1,median_monthly_income_year5,median_monthly_income_year10,median_monthly_income_final_year,years,p_account_below_half_start,p_account_wiped_out,median_final_equity,total_paid_median,leverage,rate,deposit
 fixed,1000.0000,0.0000,10.0000,1.0000,1.0000,863.7555,0.0000,0.0000,0.0000,10,1.0000,1.0000,0.0000,10365.0656,1.0000,,
 percent,1000.0000,inf,0.0000,0.0000,0.0000,60.4405,64.1608,69.9934,69.9934,10,0.0010,0.0000,11724.6497,7837.9068,1.0000,0.0060,
 ladder,1000.0000,inf,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,30,0.0000,0.0000,139437.2680,0.0000,1.0000,0.0060,0.0000
