@@ -2,3 +2,5 @@ pandas>=2.0
 numpy>=1.24
 matplotlib>=3.7
 pytest>=7.0
+numba>=0.59      # scalping lab
+pyarrow>=14      # scalping lab data cache

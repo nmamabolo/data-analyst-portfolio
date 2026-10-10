@@ -66,6 +66,16 @@ The clearest finding is about exits, not moving-average lengths. Trailing stops 
 
 EUR/USD was the hardest pair out-of-sample, and the chart shows why. The 2023–24 range produced 11 small, choppy trades. In the March 2025 breakout, the 3-ATR trailing stop knocked the robot out after three weeks (−0.2R). The rules only re-enter on a fresh crossover, so it then sat out the rest of a ~10% rally. A **re-entry rule** (rejoin the trend after a stop-out while the EMAs still agree) is the most promising next improvement.
 
+## ⚡ Scalping lab: can $10k become $1M in a year?
+
+The [`scalping/`](scalping/) folder tests **8 classic EUR/USD scalping setups** on 2.6 million real 1-minute bars (2019–2025), with realistic costs and a 2023–2025 out-of-sample test. It then simulates 10,000 one-year paths from $10k at aggressive leverage.
+
+- **No true scalp survived costs out-of-sample.** The median 1-minute candle (1.1 pips) is about the size of one round-trip cost (1.0 pip).
+- **The one setup with an edge, a London breakout, is really a 6-hour day trade.**
+- **$1M in a year happened in 0.07% of simulated years, against a 46% chance of losing 90%+.** It would take a Sharpe ratio of about 3.0; the best setup managed 0.17.
+
+[Read the full study →](scalping/)
+
 ---
 
 ## How to run it
@@ -78,7 +88,7 @@ python bot.py backtest                         # all 8 pairs, 2005 to today
 python bot.py backtest --pairs EURUSD GBPUSD --fast 20 --slow 200 --start 2019-01-01
 python bot.py optimize                         # rebuild the grid, the out-of-sample tables and the charts in results/
 python bot.py signals --equity 10000           # current positions, stops and next actions
-python -m pytest                               # 14 tests on the engine mechanics
+python -m pytest                               # 25 tests on both engines
 ```
 
 Example `signals` output (data to 2 Oct 2026):
@@ -115,6 +125,7 @@ Forex-Trading-Bot/
 │   ├── fx_daily.csv        # 5,451 days × 8 pairs, Jan 2005 – Oct 2026
 │   └── build_dataset.py
 ├── results/                # charts + CSVs written by `bot.py optimize`
+├── scalping/               # 1-minute scalping lab + $10k→$1M Monte Carlo
 └── tests/test_bot.py
 ```
 
