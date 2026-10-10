@@ -82,7 +82,7 @@ The [`factory/`](factory/) folder **creates 33,096 new strategies** from 14 buil
 
 - **About half the "winners" were luck.** Daily FX timing showed no edge, and the 12 best daily strategies failed their 2021–26 final test.
 - **What survived:** a monthly trend rule on S&P 500 + gold, at **12.2% a year on unseen 2021–26 data** and 9.2% a year since 1972.
-- **The income answer:** $10k pays about **$60–95 a month** sustainably. The rollover ladder reaches a $1,000 paycheck in about 10–12 years with a $500/month top-up.
+- **The income answer, in rand:** covering **R15,000 a month** of bills safely needs about **R3 million**. Starting from R10,000, the rollover ladder gets there in about **10 years with R20,000/month** of top-ups, or 17 years with R10,000/month.
 
 [Read the full study →](factory/)
 

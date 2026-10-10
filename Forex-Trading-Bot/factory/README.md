@@ -114,29 +114,32 @@ The rollover ladder works like this:
 - **Inflation:** the bills grow **3% a year in dollar terms**, which is SA inflation (~5–6%) less the rand's usual yearly slide against the dollar.
 - **Payout rate:** with inflation included, the safe payout falls to **0.5% a month** (about 9% return minus 3% inflation). Covering the bills therefore needs about **R3 million** in today's money.
 
-All rand figures are in today's money.
+All rand figures are in today's money. **The starting amount is R10,000.**
 
-| Starting with | Monthly top-up | Bills covered after (median) |
+| Monthly top-up | Bills covered after (median) | Chance within 10 years |
 |---|---|---|
-| $10,000 (≈R167,000) | none | not within 40 years |
-| | R2,500 | **30 years** |
-| | R5,000 | **23 years** |
-| | R10,000 | **15 years** |
-| R10,000 | none | not within 40 years |
-| | R2,500 | 36 years |
-| | R5,000 | 26 years |
-| | R10,000 | 17 years |
+| none | not within 40 years | 0% |
+| R2,500 | 36 years | 0% |
+| R5,000 | 26 years | 0% |
+| R10,000 | **17 years** | 0% |
+| R15,000 | 13 years | 9% |
+| R20,000 | **10 years** | 44% |
+| R25,000 | 8.6 years | 85% |
+| R30,000 | 7.3 years | 99% |
+
+The rows from R15,000 up come from the same simulation, run separately.
 
 ![Rand plan](results/rand_plan.png)
 
-| Without the ladder | $10,000 start | R10,000 start |
-|---|---|---|
-| Take R15,000/month from day one | lasts **11 months** | can't pay one month |
-| Pay out 0.5% a month | **≈R830/month** | **≈R50/month** |
+| Without the ladder, starting with R10,000 | |
+|---|---|
+| Take R15,000/month from day one | can't pay even one month (R10,000 covers about two-thirds of one) |
+| Pay out 0.5% a month | **≈R50/month** |
 
 **What this shows:**
-- **The monthly top-up decides the timeline, not the starting amount.** Starting with $10k instead of R10k saves only 2–6 years.
-- **Borrowing doesn't help in rand.** Borrowing costs about prime (~10%), so 1.5× leverage with an R5,000 top-up is *slower* (23.4 years) than no leverage (22.6 years).
+- **The monthly top-up decides the timeline.** R10,000 on its own grows to about R110,000 in today's money over 40 years (median), far short of R3 million. Almost all of the R3 million has to come from savings plus the returns on those savings.
+- **The starting amount barely matters.** Starting with $10,000 (≈R167,000) instead of R10,000 saves only 1–6 years: 30 / 23 / 15 / 9.5 years at R2,500 / R5,000 / R10,000 / R20,000 a month.
+- **Borrowing doesn't help in rand.** Borrowing costs about prime (~10%), so 1.5× leverage with an R5,000 top-up is *slower* (26.8 years) than no leverage (25.9 years).
 - **The paycheck lags inflation between steps.** It rises in 25% steps while bills rise every year, so the paycheck runs slightly behind inflation between steps.
 
 ## 5. Honest caveats

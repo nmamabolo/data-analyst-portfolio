@@ -3,7 +3,8 @@
 The strategy holds dollar assets (S&P 500 and gold), so the simulation runs in
 USD and converts at the latest USD/ZAR rate in the data. Bills grow 3% a year in
 dollar terms, roughly SA inflation (~5-6%) less the rand's usual yearly slide
-against the dollar. All rand figures are reported in today's money.
+against the dollar. All rand figures are reported in today's money. The headline
+case starts with R10,000; a $10,000 start is kept for comparison.
 
   python -m factory.rand_plan
 """
@@ -22,8 +23,10 @@ INFLATION_USD = 0.03         # yearly growth of the bills measured in dollars
 RATE = 0.005                 # payout per month: ~6% a year = ~9% return minus 3% inflation
 YEARS = 40
 SA_FINANCING = 0.10          # borrowing in rand costs about prime (~10%); shown once for comparison
-STARTS_ZAR = {"$10,000": None, "R10,000": 10_000}
-TOPUPS_ZAR = [0, 2_500, 5_000, 10_000]
+STARTS_ZAR = {"R10,000": 10_000, "$10,000": None}
+TOPUPS_ZAR = [0, 2_500, 5_000, 10_000, 20_000]
+CHART_TOPUPS = [2_500, 5_000, 10_000, 20_000]
+START_ZAR = 10_000
 
 
 def usdzar() -> tuple[float, str]:
@@ -48,8 +51,8 @@ def plans():
                         | {"start_label": label, "topup_zar": top, "leverage": 1})
     lev = 1.5 * base - 0.5 * SA_FINANCING / 12
     rows.append(monte_carlo(lev, "ladder", rate=RATE, deposit=5_000 / fx, years=YEARS, n_paths=3000, bill=bill,
-                            bill_growth=INFLATION_USD, start=10_000.0)
-                | {"start_label": "$10,000", "topup_zar": 5_000, "leverage": 1.5})
+                            bill_growth=INFLATION_USD, start=START_ZAR / fx)
+                | {"start_label": "R10,000", "topup_zar": 5_000, "leverage": 1.5})
     t = pd.DataFrame(rows)
     t["usdzar"], t["usdzar_date"] = fx, fx_date
     # Real (today's-rand) income: deflate by the bill growth, convert at today's rate.
@@ -67,15 +70,15 @@ def chart(fx: float):
     deflate = (1 + INFLATION_USD) ** (years - 0.5)
     sims = block_bootstrap(base, YEARS * 12, 2000)
     fig, ax = plt.subplots(figsize=(9, 4.6))
-    for color, top in zip(SERIES + ["#eda100"], TOPUPS_ZAR):
-        pays = np.array([run_policy(p, "ladder", bill=bill, rate=RATE, deposit=top / fx,
+    for color, top in zip(SERIES + ["#eda100"], CHART_TOPUPS):
+        pays = np.array([run_policy(p, "ladder", bill=bill, rate=RATE, deposit=top / fx, start=START_ZAR / fx,
                                     bill_growth=INFLATION_USD)[1] for p in sims])
         real = pays.reshape(len(sims), YEARS, 12).mean(axis=2) * fx / deflate
         p10, p50, p90 = np.percentile(real, [10, 50, 90], axis=0)
         ax.plot(years, p50, color=color, linewidth=2)
         ax.fill_between(years, p10, p90, color=color, alpha=0.10, linewidth=0)
-        label = r"\$10k only" if top == 0 else rf"\$10k + R{top:,}/month"
-        ax.text(YEARS + 0.4, p50[-1] + {0: 0, 2_500: -1_600, 5_000: 0, 10_000: 1_800}[top], label,
+        label = f"R10k + R{top:,}/month"
+        ax.text(YEARS + 0.4, p50[-1] + {2_500: -1_300, 5_000: -700, 10_000: 600, 20_000: 2_200}[top], label,
                 color=INK, fontsize=9, va="center",
                 bbox=dict(facecolor=ax.get_facecolor(), edgecolor="none", pad=1))
     ax.axhline(BILLS_ZAR, color=INK, linewidth=1, linestyle=(0, (4, 3)))
@@ -84,7 +87,8 @@ def chart(fx: float):
     ax.set_xlabel("Year")
     ax.set_ylabel("Monthly paycheck, today's rand")
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"R{v:,.0f}"))
-    ax.set_title("Rollover ladder in rand: when does the paycheck cover R15,000 of bills?")
+    ax.text(1, 1_000, "R10k with no top-up: still R0 after 40 years", color=INK, fontsize=9)
+    ax.set_title("Start with R10,000: how long until the paycheck covers R15,000 of bills?")
     return _save(fig, RESULTS / "rand_plan.png")
 
 
