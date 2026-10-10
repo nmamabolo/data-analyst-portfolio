@@ -32,12 +32,17 @@ A star-schema dataset, a **20+ measure DAX library**, a report-design spec and a
 
 ![Power BI dashboard mockup](./PowerBI-Campaign-Dashboard/dashboard_mockup.png)
 
+### [`Forex-Trading-Bot/`](./Forex-Trading-Bot) — Python project 🤖
+A forex trading robot (EMA crossover + ATR trailing stops) with a bar-by-bar backtest engine, risk-based position sizing and a parameter search. It is tested on 8 currency pairs from 21 years of real Federal Reserve FX data, and the tuned rules are then checked **out-of-sample** on 2019–2026 data they never saw.
+
+![Forex robot equity curve](./Forex-Trading-Bot/results/equity_curve.png)
+
 ---
 
 ## 🛠️ Techniques demonstrated
 `SUMIFS` · `COUNTIFS` · `AVERAGEIF` · `INDEX`/`MATCH` · `SUMPRODUCT` · `RANK` · `IFERROR` · nested `IF` · date-range cohort logic · staffing/capacity formulas · multi-sheet data models · KPI dashboards · charts · conditional formatting.
 
-**Tools:** Advanced Excel · Power BI · Amazon QuickSight · Power Query · SQL & Python (in progress)
+**Tools:** Advanced Excel · Power BI · Amazon QuickSight · Power Query · SQL · Python (pandas, NumPy, matplotlib, pytest)
 
 ---
 
