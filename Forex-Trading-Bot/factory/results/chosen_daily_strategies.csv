@@ -1,0 +1,13 @@
+strategy
+"BTCUSD | near_high(n=63, within=0.02) | trend(n=50) | long_only | max 10d"
+BTCUSD | ma_trend(n=100) | trend(n=100) | long_only
+"AUDUSD | turn_of_month(before=2, after=1) | trend(n=100) | long_only"
+BRENT | vix_regime(n=100) | vol_low(n=20) | long_only | max 21d
+"USDCAD | rsi_rev(n=3, low=20) | vol_low(n=20) | long_short | max 10d"
+BRENT | donchian(n=20) | long_only | max 21d
+"EURUSD | turn_of_month(before=2, after=1) | vol_low(n=63) | long_short | max 21d"
+"NZDUSD | near_high(n=63, within=0.02) | vol_low(n=20) | long_short | max 21d"
+USDZAR | ma_trend(n=200) | vix_fear(level=25) | short_only
+"NZDUSD | ma_cross(fast=5, slow=100) | vix_calm(level=20) | long_only | max 5d"
+"USDJPY | vol_shock(k=3.0, hold=10, follow=False) | vol_high(n=63) | long_short"
+"USDJPY | vix_spike(n=50, jump=0.25, hold=10) | vix_calm(level=20) | long_only"

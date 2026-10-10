@@ -64,3 +64,11 @@ def test_ladder_compounds_until_first_milestone_then_steps_up():
     assert paid[first] == pytest.approx(120)
     assert paid[-1] > paid[first]           # paycheck has stepped up since
     assert np.all(np.diff(paid[first:]) >= -1e-9)   # never cut while the account keeps growing
+
+
+def test_deposits_stop_once_the_paycheck_starts():
+    equity, paid = run_policy(np.zeros(40), "ladder", bill=120, rate=0.006, deposit=500)
+    first = np.argmax(paid > 0)
+    assert equity[first - 1] == pytest.approx(10_000 + 500 * first)   # reached the $20k milestone by saving
+    assert paid[first] == pytest.approx(120)
+    assert equity[-1] == pytest.approx(equity[first] - 120 * (len(paid) - first - 1))

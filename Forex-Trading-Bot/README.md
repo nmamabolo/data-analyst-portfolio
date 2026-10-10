@@ -76,6 +76,16 @@ The [`scalping/`](scalping/) folder tests **8 classic EUR/USD scalping setups** 
 
 [Read the full study →](scalping/)
 
+## 🏭 Strategy factory: can $10k pay the monthly bills?
+
+The [`factory/`](factory/) folder **creates 33,096 new strategies** from 14 building blocks. It tests them on currencies, Bitcoin, oil, the S&P 500 and gold, using a discover → confirm → final-test filter plus a "luck control" on shuffled prices.
+
+- **About half the "winners" were luck.** Daily FX timing showed no edge, and the 12 best daily strategies failed their 2021–26 final test.
+- **What survived:** a monthly trend rule on S&P 500 + gold, at **12.2% a year on unseen 2021–26 data** and 9.2% a year since 1972.
+- **The income answer:** $10k pays about **$60–95 a month** sustainably. The rollover ladder reaches a $1,000 paycheck in about 10–12 years with a $500/month top-up.
+
+[Read the full study →](factory/)
+
 ---
 
 ## How to run it
@@ -88,7 +98,7 @@ python bot.py backtest                         # all 8 pairs, 2005 to today
 python bot.py backtest --pairs EURUSD GBPUSD --fast 20 --slow 200 --start 2019-01-01
 python bot.py optimize                         # rebuild the grid, the out-of-sample tables and the charts in results/
 python bot.py signals --equity 10000           # current positions, stops and next actions
-python -m pytest                               # 25 tests on both engines
+python -m pytest                               # 33 tests across all three engines
 ```
 
 Example `signals` output (data to 2 Oct 2026):
@@ -126,6 +136,7 @@ Forex-Trading-Bot/
 │   └── build_dataset.py
 ├── results/                # charts + CSVs written by `bot.py optimize`
 ├── scalping/               # 1-minute scalping lab + $10k→$1M Monte Carlo
+├── factory/                # strategy generator, multi-asset tests, income/rollover plans
 └── tests/test_bot.py
 ```
 
