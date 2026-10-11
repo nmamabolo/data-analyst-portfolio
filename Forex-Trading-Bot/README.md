@@ -86,6 +86,10 @@ The [`factory/`](factory/) folder **creates 33,096 new strategies** from 14 buil
 
 [Read the full study →](factory/)
 
+## 📉 RSI + Ichimoku: a trader's own MT5 settings
+
+The [`rsi_ichimoku/`](rsi_ichimoku/) folder tests RSI(14) at 10/20/80/90 and Ichimoku 5/2/52, against standard settings. The test covers EUR/USD and Bitcoin on M5–D1 charts, 120 combinations in all. Only 3 of 37 testable combinations with the trader's settings were profitable in both periods. The best of them made about 1% a year. The strongest standard-settings rule, a Bitcoin cloud breakout, made money but far less than simply holding Bitcoin. [Read the study →](rsi_ichimoku/)
+
 ---
 
 ## How to run it
@@ -98,7 +102,7 @@ python bot.py backtest                         # all 8 pairs, 2005 to today
 python bot.py backtest --pairs EURUSD GBPUSD --fast 20 --slow 200 --start 2019-01-01
 python bot.py optimize                         # rebuild the grid, the out-of-sample tables and the charts in results/
 python bot.py signals --equity 10000           # current positions, stops and next actions
-python -m pytest                               # 33 tests across all three engines
+python -m pytest                               # 40 tests across all four engines
 ```
 
 Example `signals` output (data to 2 Oct 2026):
@@ -137,6 +141,7 @@ Forex-Trading-Bot/
 ├── results/                # charts + CSVs written by `bot.py optimize`
 ├── scalping/               # 1-minute scalping lab + $10k→$1M Monte Carlo
 ├── factory/                # strategy generator, multi-asset tests, income/rollover plans
+├── rsi_ichimoku/           # a trader's MT5 RSI + Ichimoku settings, tested on EUR/USD and Bitcoin
 └── tests/test_bot.py
 ```
 

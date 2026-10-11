@@ -1,0 +1,481 @@
+market,timeframe,settings,rule,period,cost,trades,trades_per_week,win_rate,avg_net_bp,avg_gross_bp,profit_factor,sharpe,annual_return_1x
+EURUSD,M5,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,809,3.90010,0.54017,-0.70624,-0.16079,0.87320,-0.76465,-0.01440
+EURUSD,M5,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,809,3.90010,0.53646,-1.06988,-0.16079,0.81353,-1.15043,-0.02165
+EURUSD,M5,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,662,4.25816,0.56344,-0.60971,-0.06425,0.88259,-0.71771,-0.01358
+EURUSD,M5,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,662,4.25816,0.54985,-0.97334,-0.06425,0.81825,-1.13967,-0.02149
+EURUSD,M5,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,27,0.13469,0.51852,-5.64598,-5.10053,0.61292,-0.45601,-0.00397
+EURUSD,M5,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,27,0.13469,0.51852,-6.00962,-5.10053,0.59288,-0.48281,-0.00423
+EURUSD,M5,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,31,0.21120,0.41935,-3.14730,-2.60185,0.67705,-0.53782,-0.00347
+EURUSD,M5,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,31,0.21120,0.41935,-3.51094,-2.60185,0.64738,-0.59809,-0.00387
+EURUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,741,3.57228,0.19298,1.28152,1.82698,1.11763,0.50718,0.02283
+EURUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,741,3.57228,0.19298,0.91788,1.82698,1.08204,0.36373,0.01594
+EURUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,591,3.84371,0.19628,-0.37987,0.16558,0.96517,-0.19400,-0.00846
+EURUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,591,3.84371,0.19628,-0.74351,0.16558,0.93361,-0.38018,-0.01564
+EURUSD,M5,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,6983,33.59511,0.43907,-0.57883,-0.03337,0.65607,-4.75376,-0.09636
+EURUSD,M5,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,6983,33.59511,0.36904,-0.94246,-0.03337,0.50384,-7.54521,-0.15198
+EURUSD,M5,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,4966,31.85514,0.45973,-0.52774,0.01771,0.66085,-4.85148,-0.08385
+EURUSD,M5,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,4966,31.85514,0.38300,-0.89138,0.01771,0.49582,-7.94298,-0.13741
+EURUSD,M5,yours,Ichimoku cloud breakout,2019-2022,low_cost,42746,205.65038,0.27558,-0.74253,-0.19707,0.58891,-14.11183,-0.54851
+EURUSD,M5,yours,Ichimoku cloud breakout,2019-2022,typical_cost,42746,205.65038,0.23782,-1.10616,-0.19707,0.46727,-18.53801,-0.69398
+EURUSD,M5,yours,Ichimoku cloud breakout,2023-2026,low_cost,29613,189.95694,0.29197,-0.62048,-0.07503,0.63324,-12.14721,-0.45875
+EURUSD,M5,yours,Ichimoku cloud breakout,2023-2026,typical_cost,29613,189.95694,0.25317,-0.98412,-0.07503,0.49719,-16.91817,-0.62209
+EURUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,1,,,,,,,
+EURUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,1,,,,,,,
+EURUSD,M5,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,5393,25.96343,0.59985,-0.42613,0.11933,0.89252,-1.57610,-0.05656
+EURUSD,M5,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,5393,25.96343,0.58669,-0.78976,0.11933,0.80794,-2.88109,-0.10176
+EURUSD,M5,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,4147,26.60154,0.60477,-0.59727,-0.05181,0.84837,-2.44250,-0.07990
+EURUSD,M5,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,4147,26.60154,0.59007,-0.96090,-0.05181,0.76480,-3.86488,-0.12504
+EURUSD,M5,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,809,3.90010,0.54017,-0.70624,-0.16079,0.87320,-0.76465,-0.01440
+EURUSD,M5,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,809,3.90010,0.53646,-1.06988,-0.16079,0.81353,-1.15043,-0.02165
+EURUSD,M5,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,662,4.25816,0.56344,-0.60971,-0.06425,0.88259,-0.71771,-0.01358
+EURUSD,M5,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,662,4.25816,0.54985,-0.97334,-0.06425,0.81825,-1.13967,-0.02149
+EURUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,4623,22.22596,0.35821,-0.31238,0.23308,0.95989,-0.54876,-0.03754
+EURUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,4623,22.22596,0.35799,-0.67601,0.23308,0.91573,-1.18533,-0.07715
+EURUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,3614,23.18253,0.34809,-0.64156,-0.09610,0.91555,-1.28111,-0.07624
+EURUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,3614,23.18253,0.34809,-1.00519,-0.09610,0.87169,-2.00039,-0.11586
+EURUSD,M5,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,6119,29.43842,0.31525,-0.84073,-0.29528,0.81212,-2.52997,-0.12191
+EURUSD,M5,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,6119,29.43842,0.29874,-1.20437,-0.29528,0.74520,-3.57894,-0.16946
+EURUSD,M5,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,4291,27.55041,0.32836,-0.59790,-0.05245,0.85772,-1.86019,-0.08314
+EURUSD,M5,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,4291,27.55041,0.30879,-0.96154,-0.05245,0.78393,-2.95285,-0.12968
+EURUSD,M5,standard,Ichimoku cloud breakout,2019-2022,low_cost,12933,62.30582,0.25385,-0.82576,-0.28030,0.72922,-4.87078,-0.23587
+EURUSD,M5,standard,Ichimoku cloud breakout,2019-2022,typical_cost,12933,62.30582,0.22833,-1.18940,-0.28030,0.64235,-6.77977,-0.32080
+EURUSD,M5,standard,Ichimoku cloud breakout,2023-2026,low_cost,8782,56.33343,0.26486,-0.74023,-0.19477,0.75379,-4.29880,-0.19596
+EURUSD,M5,standard,Ichimoku cloud breakout,2023-2026,typical_cost,8782,56.33343,0.23719,-1.10386,-0.19477,0.66343,-6.19583,-0.27721
+EURUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,14,0.07594,0.35714,3.65878,4.20424,2.01117,0.45545,0.00144
+EURUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,14,0.07594,0.35714,3.29515,4.20424,1.85541,0.41221,0.00130
+EURUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,16,0.20851,0.25000,-3.14932,-2.60387,0.46985,-0.94984,-0.00342
+EURUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,16,0.20851,0.18750,-3.51296,-2.60387,0.43664,-1.04917,-0.00381
+EURUSD,M15,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,313,1.51622,0.56550,0.09395,0.63940,1.01169,0.04242,0.00058
+EURUSD,M15,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,313,1.51622,0.55272,-0.26969,0.63940,0.96711,-0.12158,-0.00228
+EURUSD,M15,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,250,1.62593,0.55600,-0.46081,0.08464,0.94382,-0.21608,-0.00404
+EURUSD,M15,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,250,1.62593,0.55200,-0.82445,0.08464,0.90145,-0.38539,-0.00710
+EURUSD,M15,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,7,0.04192,0.28571,-18.09761,-17.55215,0.24214,-0.83967,-0.00395
+EURUSD,M15,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,7,0.04192,0.28571,-18.46124,-17.55215,0.23523,-0.85099,-0.00403
+EURUSD,M15,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,10,0.07848,0.80000,13.05024,13.59569,3.19901,0.97975,0.00533
+EURUSD,M15,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,10,0.07848,0.80000,12.68660,13.59569,3.11185,0.95862,0.00518
+EURUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,290,1.40481,0.21379,0.76455,1.31001,1.04013,0.12872,0.00450
+EURUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,290,1.40481,0.21379,0.40092,1.31001,1.02073,0.06756,0.00184
+EURUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,219,1.42829,0.21461,0.48530,1.03075,1.02507,0.07917,0.00251
+EURUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,219,1.42829,0.21461,0.12166,1.03075,1.00619,0.01985,-0.00019
+EURUSD,M15,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,2469,11.91096,0.49615,-0.64267,-0.09721,0.76289,-2.08835,-0.03920
+EURUSD,M15,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,2469,11.91096,0.45565,-1.00630,-0.09721,0.65313,-3.25031,-0.06060
+EURUSD,M15,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,1727,11.08822,0.51534,-0.30202,0.24344,0.86999,-1.05799,-0.01740
+EURUSD,M15,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,1727,11.08822,0.47713,-0.66565,0.24344,0.73445,-2.32109,-0.03779
+EURUSD,M15,yours,Ichimoku cloud breakout,2019-2022,low_cost,14093,67.89422,0.30412,-0.86819,-0.32273,0.69344,-6.29647,-0.26477
+EURUSD,M15,yours,Ichimoku cloud breakout,2019-2022,typical_cost,14093,67.89422,0.27673,-1.23183,-0.32273,0.60134,-8.61090,-0.35336
+EURUSD,M15,yours,Ichimoku cloud breakout,2023-2026,low_cost,9999,64.14006,0.30803,-0.82626,-0.28080,0.70404,-6.07655,-0.24163
+EURUSD,M15,yours,Ichimoku cloud breakout,2023-2026,typical_cost,9999,64.14006,0.28413,-1.18989,-0.28080,0.60967,-8.41108,-0.32826
+EURUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,1,,,,,,,
+EURUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,1,,,,,,,
+EURUSD,M15,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,1923,9.26422,0.62038,0.42685,0.97230,1.06734,0.55199,0.02006
+EURUSD,M15,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,1923,9.26422,0.61518,0.06321,0.97230,1.00976,0.08137,0.00235
+EURUSD,M15,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,1401,8.99514,0.60600,-0.31499,0.23047,0.95256,-0.43801,-0.01523
+EURUSD,M15,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,1401,8.99514,0.59814,-0.67862,0.23047,0.89998,-0.93889,-0.03183
+EURUSD,M15,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,313,1.51622,0.56550,0.09395,0.63940,1.01169,0.04242,0.00058
+EURUSD,M15,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,313,1.51622,0.55272,-0.26969,0.63940,0.96711,-0.12158,-0.00228
+EURUSD,M15,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,250,1.62593,0.55600,-0.46081,0.08464,0.94382,-0.21608,-0.00404
+EURUSD,M15,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,250,1.62593,0.55200,-0.82445,0.08464,0.90145,-0.38539,-0.00710
+EURUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,1644,7.92011,0.37713,0.51318,1.05864,1.03830,0.30248,0.01906
+EURUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,1644,7.92011,0.37713,0.14955,1.05864,1.01098,0.08807,0.00391
+EURUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,1204,7.73029,0.35299,-1.43249,-0.88703,0.89342,-0.97831,-0.05760
+EURUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,1204,7.73029,0.35216,-1.79612,-0.88703,0.86867,-1.22458,-0.07128
+EURUSD,M15,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,2070,9.95874,0.32222,-1.32701,-0.78155,0.82386,-1.38133,-0.06743
+EURUSD,M15,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,2070,9.95874,0.31401,-1.69064,-0.78155,0.78274,-1.75185,-0.08483
+EURUSD,M15,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,1462,9.38679,0.33174,-1.28155,-0.73609,0.83229,-1.34388,-0.06159
+EURUSD,M15,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,1462,9.38679,0.32695,-1.64519,-0.73609,0.79137,-1.71600,-0.07810
+EURUSD,M15,standard,Ichimoku cloud breakout,2019-2022,low_cost,4125,19.88618,0.26836,-1.09877,-0.55332,0.79324,-2.04929,-0.10859
+EURUSD,M15,standard,Ichimoku cloud breakout,2019-2022,typical_cost,4125,19.88618,0.25042,-1.46241,-0.55332,0.73809,-2.68929,-0.14149
+EURUSD,M15,standard,Ichimoku cloud breakout,2023-2026,low_cost,2852,18.31130,0.28401,-0.51613,0.02933,0.89793,-0.91591,-0.04917
+EURUSD,M15,standard,Ichimoku cloud breakout,2023-2026,typical_cost,2852,18.31130,0.26858,-0.87976,0.02933,0.83462,-1.54185,-0.08153
+EURUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,5,0.03043,0.40000,0.23986,0.78532,1.06122,0.03236,0.00004
+EURUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,5,0.03043,0.40000,-0.12377,0.78532,0.97008,-0.01670,-0.00002
+EURUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,5,0.04676,0.20000,1.89475,2.44020,1.19455,0.10265,0.00045
+EURUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,5,0.04676,0.20000,1.53111,2.44020,1.15265,0.08302,0.00036
+EURUSD,H1,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,89,0.44494,0.50562,-8.09894,-7.55349,0.59979,-1.03422,-0.01873
+EURUSD,H1,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,89,0.44494,0.50562,-8.46258,-7.55349,0.58550,-1.07807,-0.01955
+EURUSD,H1,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,71,0.46262,0.54930,-5.64771,-5.10226,0.70230,-0.64203,-0.01367
+EURUSD,H1,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,71,0.46262,0.54930,-6.01135,-5.10226,0.68585,-0.68199,-0.01454
+EURUSD,H1,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,3,0.02762,0.33333,-19.59777,-19.05231,0.09753,-0.85715,-0.00282
+EURUSD,H1,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,3,0.02762,0.33333,-19.96140,-19.05231,0.09093,-0.86481,-0.00287
+EURUSD,H1,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,1,,,,,,,
+EURUSD,H1,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,1,,,,,,,
+EURUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,83,0.41494,0.16867,-12.32295,-11.77750,0.66086,-0.74582,-0.02685
+EURUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,83,0.41494,0.16867,-12.68659,-11.77750,0.65373,-0.76721,-0.02761
+EURUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,67,0.43656,0.19403,0.04160,0.58705,1.00109,0.00177,-0.00125
+EURUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,67,0.43656,0.19403,-0.32204,0.58705,0.99161,-0.01370,-0.00207
+EURUSD,H1,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,689,3.33074,0.56604,0.33412,0.87957,1.08052,0.28533,0.00560
+EURUSD,H1,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,689,3.33074,0.52830,-0.02952,0.87957,0.99316,-0.02521,-0.00072
+EURUSD,H1,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,436,2.79934,0.52523,-0.89091,-0.34546,0.82644,-0.70477,-0.01306
+EURUSD,H1,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,436,2.79934,0.51376,-1.25455,-0.34546,0.76365,-0.99095,-0.01827
+EURUSD,H1,yours,Ichimoku cloud breakout,2019-2022,low_cost,3332,16.07424,0.35144,-0.81978,-0.27432,0.85059,-1.37033,-0.06725
+EURUSD,H1,yours,Ichimoku cloud breakout,2019-2022,typical_cost,3332,16.07424,0.33403,-1.18341,-0.27432,0.79331,-1.96045,-0.09518
+EURUSD,H1,yours,Ichimoku cloud breakout,2023-2026,low_cost,2378,15.26797,0.35156,-0.71730,-0.17184,0.86456,-1.20628,-0.05622
+EURUSD,H1,yours,Ichimoku cloud breakout,2023-2026,typical_cost,2378,15.26797,0.33810,-1.08093,-0.17184,0.80469,-1.80255,-0.08308
+EURUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,0,,,,,,,
+EURUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,0,,,,,,,
+EURUSD,H1,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,511,2.46856,0.60665,-1.86320,-1.31774,0.86914,-0.63419,-0.02432
+EURUSD,H1,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,511,2.46856,0.60274,-2.22683,-1.31774,0.84516,-0.75705,-0.02886
+EURUSD,H1,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,388,2.49344,0.63918,0.87282,1.41828,1.07119,0.32700,0.01076
+EURUSD,H1,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,388,2.49344,0.63660,0.50918,1.41828,1.04109,0.19068,0.00601
+EURUSD,H1,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,89,0.44494,0.50562,-8.09894,-7.55349,0.59979,-1.03422,-0.01873
+EURUSD,H1,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,89,0.44494,0.50562,-8.46258,-7.55349,0.58550,-1.07807,-0.01955
+EURUSD,H1,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,71,0.46262,0.54930,-5.64771,-5.10226,0.70230,-0.64203,-0.01367
+EURUSD,H1,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,71,0.46262,0.54930,-6.01135,-5.10226,0.68585,-0.68199,-0.01454
+EURUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,474,2.28667,0.33755,-6.19219,-5.64673,0.78305,-1.16514,-0.07280
+EURUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,474,2.28667,0.33755,-6.55583,-5.64673,0.77223,-1.23272,-0.07681
+EURUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,342,2.19782,0.39474,4.34347,4.88892,1.17363,0.75872,0.04864
+EURUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,342,2.19782,0.39474,3.97983,4.88892,1.15771,0.69524,0.04429
+EURUSD,H1,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,510,2.46712,0.38627,0.05602,0.60147,1.00356,0.01365,-0.00062
+EURUSD,H1,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,510,2.46712,0.38431,-0.30762,0.60147,0.98071,-0.07492,-0.00527
+EURUSD,H1,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,368,2.36924,0.36957,0.26044,0.80590,1.01789,0.07043,0.00210
+EURUSD,H1,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,368,2.36924,0.36685,-0.10319,0.80590,0.99302,-0.02791,-0.00238
+EURUSD,H1,standard,Ichimoku cloud breakout,2019-2022,low_cost,937,4.53585,0.30309,-1.62567,-1.08022,0.85547,-0.67346,-0.03894
+EURUSD,H1,standard,Ichimoku cloud breakout,2019-2022,typical_cost,937,4.53585,0.29883,-1.98931,-1.08022,0.82704,-0.82160,-0.04715
+EURUSD,H1,standard,Ichimoku cloud breakout,2023-2026,low_cost,695,4.46225,0.31079,-0.37622,0.16924,0.96296,-0.15902,-0.01006
+EURUSD,H1,standard,Ichimoku cloud breakout,2023-2026,typical_cost,695,4.46225,0.30647,-0.73985,0.16924,0.92891,-0.31191,-0.01838
+EURUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,6,0.03041,0.50000,-3.54411,-2.99865,0.68934,-0.19216,-0.00056
+EURUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,6,0.03041,0.50000,-3.90775,-2.99865,0.66284,-0.21135,-0.00062
+EURUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,3,0.07553,0.33333,5.90141,6.44686,1.69009,0.41873,0.00231
+EURUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,3,0.07553,0.33333,5.53777,6.44686,1.62972,0.39398,0.00216
+EURUSD,H4,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,26,0.14102,0.50000,-10.24920,-9.70374,0.68670,-0.44968,-0.00763
+EURUSD,H4,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,26,0.14102,0.50000,-10.61283,-9.70374,0.67738,-0.46518,-0.00789
+EURUSD,H4,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,9,0.07135,0.55556,-5.05669,-4.51123,0.84564,-0.14325,-0.00196
+EURUSD,H4,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,9,0.07135,0.55556,-5.42032,-4.51123,0.83535,-0.15348,-0.00209
+EURUSD,H4,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,0,,,,,,,
+EURUSD,H4,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,0,,,,,,,
+EURUSD,H4,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,0,,,,,,,
+EURUSD,H4,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,0,,,,,,,
+EURUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,24,0.12752,0.00000,-76.97618,-76.43072,0.00000,-2.42812,-0.04998
+EURUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,24,0.12752,0.00000,-77.33981,-76.43072,0.00000,-2.42954,-0.05021
+EURUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,6,0.04709,0.16667,32.56402,33.10947,1.34235,0.15391,0.00671
+EURUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,6,0.04709,0.16667,32.20038,33.10947,1.33746,0.15221,0.00663
+EURUSD,H4,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,175,0.86564,0.52000,-1.29997,-0.75452,0.87707,-0.25605,-0.00609
+EURUSD,H4,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,175,0.86564,0.51429,-1.66361,-0.75452,0.84524,-0.32752,-0.00772
+EURUSD,H4,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,106,0.69519,0.51887,0.60515,1.15060,1.06225,0.11988,0.00202
+EURUSD,H4,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,106,0.69519,0.51887,0.24151,1.15060,1.02440,0.04785,0.00071
+EURUSD,H4,yours,Ichimoku cloud breakout,2019-2022,low_cost,805,3.91305,0.35155,-2.73534,-2.18989,0.75679,-1.24996,-0.05499
+EURUSD,H4,yours,Ichimoku cloud breakout,2019-2022,typical_cost,805,3.91305,0.34286,-3.09898,-2.18989,0.73016,-1.41260,-0.06196
+EURUSD,H4,yours,Ichimoku cloud breakout,2023-2026,low_cost,613,3.93937,0.36378,-1.12814,-0.58268,0.88718,-0.56196,-0.02358
+EURUSD,H4,yours,Ichimoku cloud breakout,2023-2026,typical_cost,613,3.93937,0.35563,-1.49177,-0.58268,0.85422,-0.74106,-0.03082
+EURUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,0,,,,,,,
+EURUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,0,,,,,,,
+EURUSD,H4,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,141,0.68969,0.65248,0.55466,1.10011,1.02115,0.05124,0.00124
+EURUSD,H4,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,141,0.68969,0.63830,0.19102,1.10011,1.00725,0.01765,-0.00007
+EURUSD,H4,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,101,0.65085,0.61386,1.47152,2.01697,1.06033,0.14547,0.00441
+EURUSD,H4,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,101,0.65085,0.61386,1.10788,2.01697,1.04516,0.10953,0.00318
+EURUSD,H4,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,26,0.14102,0.50000,-10.24920,-9.70374,0.68670,-0.44968,-0.00763
+EURUSD,H4,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,26,0.14102,0.50000,-10.61283,-9.70374,0.67738,-0.46518,-0.00789
+EURUSD,H4,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,9,0.07135,0.55556,-5.05669,-4.51123,0.84564,-0.14325,-0.00196
+EURUSD,H4,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,9,0.07135,0.55556,-5.42032,-4.51123,0.83535,-0.15348,-0.00209
+EURUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,123,0.59419,0.41463,16.80497,17.35043,1.35247,0.72313,0.05058
+EURUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,123,0.59419,0.41463,16.44134,17.35043,1.34331,0.70772,0.04940
+EURUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,92,0.60225,0.29348,-11.29393,-10.74848,0.79451,-0.57483,-0.03655
+EURUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,92,0.60225,0.29348,-11.65757,-10.74848,0.78889,-0.59312,-0.03765
+EURUSD,H4,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,110,0.53693,0.38182,-5.26963,-4.72417,0.82563,-0.35954,-0.01543
+EURUSD,H4,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,110,0.53693,0.38182,-5.63326,-4.72417,0.81497,-0.38425,-0.01642
+EURUSD,H4,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,101,0.65025,0.39604,2.19194,2.73740,1.07774,0.15076,0.00624
+EURUSD,H4,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,101,0.65025,0.39604,1.82831,2.73740,1.06435,0.12577,0.00500
+EURUSD,H4,standard,Ichimoku cloud breakout,2019-2022,low_cost,242,1.18619,0.34298,0.70120,1.24666,1.03555,0.07976,0.00293
+EURUSD,H4,standard,Ichimoku cloud breakout,2019-2022,typical_cost,242,1.18619,0.33884,0.33757,1.24666,1.01691,0.03839,0.00069
+EURUSD,H4,standard,Ichimoku cloud breakout,2023-2026,low_cost,166,1.07564,0.34337,-1.99710,-1.45164,0.90150,-0.24608,-0.01209
+EURUSD,H4,standard,Ichimoku cloud breakout,2023-2026,typical_cost,166,1.07564,0.34337,-2.36074,-1.45164,0.88492,-0.29073,-0.01410
+EURUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,0,,,,,,,
+EURUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,2,0.08074,0.50000,-12.32781,-11.78235,0.88789,-0.12073,-0.00607
+EURUSD,D1,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,2,0.08074,0.50000,-12.69144,-11.78235,0.88477,-0.12428,-0.00622
+EURUSD,D1,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,2,0.08074,0.00000,-231.99543,-231.44998,0.00000,-2.04550,-0.09385
+EURUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,2,0.08074,0.00000,-232.35907,-231.44998,0.00000,-2.04551,-0.09399
+EURUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,0,,,,,,,
+EURUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,0,,,,,,,
+EURUSD,D1,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,21,0.10822,0.52381,11.74105,12.28651,1.58464,0.43813,0.00652
+EURUSD,D1,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,21,0.10822,0.52381,11.37742,12.28651,1.56169,0.42500,0.00631
+EURUSD,D1,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,22,0.15484,0.63636,14.28384,14.82929,2.15440,0.75467,0.01145
+EURUSD,D1,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,22,0.15484,0.63636,13.92020,14.82929,2.11312,0.73675,0.01115
+EURUSD,D1,yours,Ichimoku cloud breakout,2019-2022,low_cost,128,0.64962,0.42969,6.80936,7.35481,1.32514,0.56953,0.02244
+EURUSD,D1,yours,Ichimoku cloud breakout,2019-2022,typical_cost,128,0.64962,0.42188,6.44572,7.35481,1.30472,0.53936,0.02119
+EURUSD,D1,yours,Ichimoku cloud breakout,2023-2026,low_cost,104,0.67576,0.42308,-0.68555,-0.14010,0.97225,-0.05855,-0.00324
+EURUSD,D1,yours,Ichimoku cloud breakout,2023-2026,typical_cost,104,0.67576,0.41346,-1.04919,-0.14010,0.95790,-0.08960,-0.00452
+EURUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,0,,,,,,,
+EURUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,0,,,,,,,
+EURUSD,D1,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,19,0.09255,0.68421,17.55779,18.10324,1.42575,0.29909,0.00808
+EURUSD,D1,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,19,0.09255,0.68421,17.19415,18.10324,1.41578,0.29301,0.00791
+EURUSD,D1,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,13,0.10214,0.76923,18.33341,18.87886,1.31104,0.26827,0.00912
+EURUSD,D1,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,13,0.10214,0.76923,17.96977,18.87886,1.30444,0.26302,0.00892
+EURUSD,D1,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,2,0.08074,0.50000,-12.32781,-11.78235,0.88789,-0.12073,-0.00607
+EURUSD,D1,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,2,0.08074,0.50000,-12.69144,-11.78235,0.88477,-0.12428,-0.00622
+EURUSD,D1,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,0,,,,,,,
+EURUSD,D1,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,0,,,,,,,
+EURUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,16,0.07656,0.25000,-48.07662,-47.53116,0.71365,-0.27881,-0.02120
+EURUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,16,0.07656,0.25000,-48.44026,-47.53116,0.71195,-0.28088,-0.02134
+EURUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,12,0.09644,0.33333,-42.63924,-42.09378,0.74117,-0.31335,-0.02341
+EURUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,12,0.09644,0.33333,-43.00287,-42.09378,0.73935,-0.31597,-0.02359
+EURUSD,D1,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,19,0.11475,0.47368,-2.59032,-2.04487,0.96682,-0.03293,-0.00264
+EURUSD,D1,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,19,0.11475,0.47368,-2.95396,-2.04487,0.96225,-0.03755,-0.00286
+EURUSD,D1,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,13,0.08721,0.30769,-11.39652,-10.85106,0.83384,-0.16728,-0.00563
+EURUSD,D1,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,13,0.08721,0.30769,-11.76015,-10.85106,0.82917,-0.17258,-0.00579
+EURUSD,D1,standard,Ichimoku cloud breakout,2019-2022,low_cost,36,0.18620,0.41667,7.94890,8.49436,1.20196,0.17134,0.00674
+EURUSD,D1,standard,Ichimoku cloud breakout,2019-2022,typical_cost,36,0.18620,0.38889,7.58527,8.49436,1.19164,0.16352,0.00638
+EURUSD,D1,standard,Ichimoku cloud breakout,2023-2026,low_cost,21,0.15021,0.33333,17.90636,18.45182,1.41123,0.32310,0.01316
+EURUSD,D1,standard,Ichimoku cloud breakout,2023-2026,typical_cost,21,0.15021,0.33333,17.54273,18.45182,1.40064,0.31663,0.01287
+EURUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,0,,,,,,,
+EURUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,0,,,,,,,
+EURUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,0,,,,,,,
+EURUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,0,,,,,,,
+BTCUSD,M5,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,1408,6.77387,0.49929,-16.09335,-6.09335,0.70503,-2.61292,-0.45062
+BTCUSD,M5,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,1408,6.77387,0.40909,-36.09335,-6.09335,0.44869,-5.45136,-0.72894
+BTCUSD,M5,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,1516,7.73869,0.52836,-7.14586,2.85414,0.76061,-2.10455,-0.25708
+BTCUSD,M5,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,1516,7.73869,0.36214,-27.14586,2.85414,0.33773,-7.19668,-0.66826
+BTCUSD,M5,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,93,0.45082,0.43011,-43.26573,-33.26573,0.48285,-1.02249,-0.10096
+BTCUSD,M5,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,93,0.45082,0.32258,-63.26573,-33.26573,0.34305,-1.45059,-0.14237
+BTCUSD,M5,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,103,0.52886,0.39806,-28.36160,-18.36160,0.40909,-1.63964,-0.07608
+BTCUSD,M5,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,103,0.52886,0.25243,-48.36160,-18.36160,0.21245,-2.52163,-0.12571
+BTCUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,1316,6.33126,0.23176,-12.28125,-2.28125,0.88813,-0.78708,-0.41853
+BTCUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,1316,6.33126,0.23100,-32.28125,-2.28125,0.74207,-2.05048,-0.69960
+BTCUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,1388,7.09561,0.22767,-5.26103,4.73897,0.91449,-0.64275,-0.21597
+BTCUSD,M5,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,1388,7.09561,0.22118,-25.26103,4.73897,0.67205,-3.04695,-0.62565
+BTCUSD,M5,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,10016,48.18683,0.32458,-8.96584,1.03416,0.42509,-12.07961,-0.89602
+BTCUSD,M5,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,10016,48.18683,0.10353,-28.96584,1.03416,0.08872,-31.28055,-0.99931
+BTCUSD,M5,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,8595,43.84285,0.21966,-9.83847,0.16153,0.22557,-19.43132,-0.89455
+BTCUSD,M5,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,8595,43.84285,0.04386,-29.83847,0.16153,0.02742,-39.03856,-0.99891
+BTCUSD,M5,yours,Ichimoku cloud breakout,2019-2022,low_cost,63702,306.46938,0.20634,-9.75784,0.24216,0.40982,-30.40255,-1.00000
+BTCUSD,M5,yours,Ichimoku cloud breakout,2019-2022,typical_cost,63702,306.46938,0.08670,-29.75784,0.24216,0.12094,-68.86108,-1.00000
+BTCUSD,M5,yours,Ichimoku cloud breakout,2023-2026,low_cost,56176,286.34426,0.16646,-9.84434,0.15566,0.28641,-42.71322,-1.00000
+BTCUSD,M5,yours,Ichimoku cloud breakout,2023-2026,typical_cost,56176,286.34426,0.05682,-29.84434,0.15566,0.06241,-86.45767,-1.00000
+BTCUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,11,0.05484,0.18182,-44.87248,-34.87248,0.22811,-0.84579,-0.01283
+BTCUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,11,0.05484,0.18182,-64.87248,-34.87248,0.12919,-1.08422,-0.01847
+BTCUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,7,0.12051,0.28571,-27.43836,-17.43836,0.43478,-0.78871,-0.01728
+BTCUSD,M5,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,7,0.12051,0.14286,-47.43836,-17.43836,0.25659,-1.24732,-0.02957
+BTCUSD,M5,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,6761,32.52707,0.58172,-8.81408,1.18592,0.75318,-4.28040,-0.79029
+BTCUSD,M5,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,6761,32.52707,0.38900,-28.81408,1.18592,0.37273,-12.77824,-0.99293
+BTCUSD,M5,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,7517,38.34401,0.51683,-9.01959,0.98041,0.60196,-8.21743,-0.83851
+BTCUSD,M5,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,7517,38.34401,0.24292,-29.01959,0.98041,0.17653,-22.21593,-0.99703
+BTCUSD,M5,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,1408,6.77387,0.49929,-16.09335,-6.09335,0.70503,-2.61292,-0.45062
+BTCUSD,M5,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,1408,6.77387,0.40909,-36.09335,-6.09335,0.44869,-5.45136,-0.72894
+BTCUSD,M5,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,1516,7.73869,0.52836,-7.14586,2.85414,0.76061,-2.10455,-0.25708
+BTCUSD,M5,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,1516,7.73869,0.36214,-27.14586,2.85414,0.33773,-7.19668,-0.66826
+BTCUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,5838,28.06731,0.37958,-9.20844,0.79156,0.87091,-2.19630,-0.78902
+BTCUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,5838,28.06731,0.37119,-29.20844,0.79156,0.65146,-6.78284,-0.98868
+BTCUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,6584,33.58480,0.35024,-8.29646,1.70354,0.80130,-3.83252,-0.78179
+BTCUSD,M5,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,6584,33.58480,0.32746,-28.29646,1.70354,0.48486,-12.31865,-0.99341
+BTCUSD,M5,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,8636,41.51923,0.27814,-8.23577,1.76423,0.76018,-3.85386,-0.84873
+BTCUSD,M5,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,8636,41.51923,0.19511,-28.23577,1.76423,0.43214,-12.45463,-0.99800
+BTCUSD,M5,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,7902,40.30788,0.25842,-7.43931,2.56069,0.70437,-4.90607,-0.79980
+BTCUSD,M5,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,7902,40.30788,0.16894,-27.43931,2.56069,0.33054,-16.22713,-0.99700
+BTCUSD,M5,standard,Ichimoku cloud breakout,2019-2022,low_cost,19567,94.13655,0.20044,-10.38785,-0.38785,0.57894,-10.36312,-0.99449
+BTCUSD,M5,standard,Ichimoku cloud breakout,2019-2022,typical_cost,19567,94.13655,0.11662,-30.38785,-0.38785,0.27127,-24.94106,-1.00000
+BTCUSD,M5,standard,Ichimoku cloud breakout,2023-2026,low_cost,16866,85.97056,0.18202,-9.71619,0.28381,0.49610,-12.96971,-0.98765
+BTCUSD,M5,standard,Ichimoku cloud breakout,2023-2026,typical_cost,16866,85.97056,0.10121,-29.71619,0.28381,0.18851,-29.87638,-1.00000
+BTCUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,34,0.18175,0.26471,-24.36578,-14.36578,0.59339,-0.59721,-0.02349
+BTCUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,34,0.18175,0.26471,-44.36578,-14.36578,0.40552,-1.04381,-0.04184
+BTCUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,22,0.11887,0.40909,-7.56542,2.43458,0.70225,-0.33064,-0.00477
+BTCUSD,M5,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,22,0.11887,0.27273,-27.56542,2.43458,0.29811,-1.09344,-0.01701
+BTCUSD,M15,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,566,2.72115,0.47527,-35.52368,-25.52368,0.61519,-2.13708,-0.41467
+BTCUSD,M15,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,566,2.72115,0.42049,-55.52368,-25.52368,0.46286,-3.20385,-0.55957
+BTCUSD,M15,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,554,2.83624,0.54152,-12.97931,-2.97931,0.74408,-1.44917,-0.18164
+BTCUSD,M15,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,554,2.83624,0.44585,-32.97931,-2.97931,0.45700,-3.47436,-0.39112
+BTCUSD,M15,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,44,0.21567,0.47727,-70.11394,-60.11394,0.46260,-0.95151,-0.07975
+BTCUSD,M15,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,44,0.21567,0.40909,-90.11394,-60.11394,0.36272,-1.19354,-0.10034
+BTCUSD,M15,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,30,0.15667,0.43333,-58.32980,-48.32980,0.30806,-1.27951,-0.04707
+BTCUSD,M15,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,30,0.15667,0.30000,-78.32980,-48.32980,0.18549,-1.59658,-0.06258
+BTCUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,526,2.52366,0.21483,-36.38083,-26.38083,0.79427,-0.91514,-0.45531
+BTCUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,526,2.52366,0.21483,-56.38083,-26.38083,0.70718,-1.40956,-0.58177
+BTCUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,509,2.60586,0.22790,-11.62078,-1.62078,0.88957,-0.55625,-0.18264
+BTCUSD,M15,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,509,2.60586,0.22790,-31.62078,-1.62078,0.73797,-1.50245,-0.37714
+BTCUSD,M15,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,3611,17.37247,0.40460,-7.92836,2.07164,0.64506,-3.73224,-0.52006
+BTCUSD,M15,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,3611,17.37247,0.20465,-27.92836,2.07164,0.23478,-12.35975,-0.92146
+BTCUSD,M15,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,3114,15.88443,0.33205,-10.12965,-0.12965,0.40121,-7.58704,-0.56944
+BTCUSD,M15,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,3114,15.88443,0.11593,-30.12965,-0.12965,0.08583,-18.44779,-0.91775
+BTCUSD,M15,yours,Ichimoku cloud breakout,2019-2022,low_cost,21097,101.49736,0.24093,-10.82582,-0.82582,0.54528,-12.73094,-0.99700
+BTCUSD,M15,yours,Ichimoku cloud breakout,2019-2022,typical_cost,21097,101.49736,0.13481,-30.82582,-0.82582,0.23366,-31.04674,-1.00000
+BTCUSD,M15,yours,Ichimoku cloud breakout,2023-2026,low_cost,19078,97.24572,0.21229,-9.79441,0.20559,0.46317,-16.45787,-0.99324
+BTCUSD,M15,yours,Ichimoku cloud breakout,2023-2026,typical_cost,19078,97.24572,0.10394,-29.79441,0.20559,0.15541,-39.62268,-1.00000
+BTCUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,1,,,,,,,
+BTCUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,1,,,,,,,
+BTCUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,2,0.22299,0.00000,-36.74523,-26.74523,0.00000,-3.13075,-0.04180
+BTCUSD,M15,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,2,0.22299,0.00000,-56.74523,-26.74523,0.00000,-3.28122,-0.06387
+BTCUSD,M15,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,2427,11.66827,0.61599,-6.38144,3.61856,0.88677,-1.08695,-0.36674
+BTCUSD,M15,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,2427,11.66827,0.52287,-26.38144,3.61856,0.59374,-4.32297,-0.81225
+BTCUSD,M15,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,2480,12.65041,0.58185,-9.18491,0.81509,0.75798,-2.66667,-0.46733
+BTCUSD,M15,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,2480,12.65041,0.43589,-29.18491,0.81509,0.38728,-7.84370,-0.85746
+BTCUSD,M15,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,566,2.72115,0.47527,-35.52368,-25.52368,0.61519,-2.13708,-0.41467
+BTCUSD,M15,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,566,2.72115,0.42049,-55.52368,-25.52368,0.46286,-3.20385,-0.55957
+BTCUSD,M15,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,554,2.83624,0.54152,-12.97931,-2.97931,0.74408,-1.44917,-0.18164
+BTCUSD,M15,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,554,2.83624,0.44585,-32.97931,-2.97931,0.45700,-3.47436,-0.39112
+BTCUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,2118,10.18269,0.38857,-10.64813,-0.64813,0.90969,-0.90047,-0.53445
+BTCUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,2118,10.18269,0.38716,-30.64813,-0.64813,0.76453,-2.56420,-0.83903
+BTCUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,2140,10.91608,0.37056,-7.55650,2.44350,0.89590,-1.11508,-0.39531
+BTCUSD,M15,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,2140,10.91608,0.36402,-27.55650,2.44350,0.67678,-3.94934,-0.80614
+BTCUSD,M15,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,3001,14.44766,0.30423,-4.11260,5.88740,0.92315,-0.64409,-0.34559
+BTCUSD,M15,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,3001,14.44766,0.24125,-24.11260,5.88740,0.64598,-3.69505,-0.85473
+BTCUSD,M15,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,2711,13.82874,0.29915,-4.73125,5.26875,0.87601,-1.10707,-0.32146
+BTCUSD,M15,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,2711,13.82874,0.22206,-24.73125,5.26875,0.53361,-5.54337,-0.83931
+BTCUSD,M15,standard,Ichimoku cloud breakout,2019-2022,low_cost,6278,30.20337,0.23973,-9.99381,0.00619,0.74278,-2.98522,-0.81663
+BTCUSD,M15,standard,Ichimoku cloud breakout,2019-2022,typical_cost,6278,30.20337,0.16391,-29.99381,0.00619,0.45418,-8.23430,-0.99213
+BTCUSD,M15,standard,Ichimoku cloud breakout,2023-2026,low_cost,5623,28.66195,0.21839,-8.65994,1.34006,0.69658,-3.75455,-0.73937
+BTCUSD,M15,standard,Ichimoku cloud breakout,2023-2026,typical_cost,5623,28.66195,0.14601,-28.65994,1.34006,0.36369,-10.84538,-0.98685
+BTCUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,19,0.09574,0.21053,-41.69978,-31.69978,0.59849,-0.35935,-0.02217
+BTCUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,19,0.09574,0.21053,-61.69978,-31.69978,0.48432,-0.52378,-0.03192
+BTCUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,3,0.02163,0.66667,38.49703,48.49703,4.62744,0.56894,0.00431
+BTCUSD,M15,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,3,0.02163,0.66667,18.49703,48.49703,2.07047,0.30977,0.00206
+BTCUSD,H1,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,189,0.92319,0.46032,-76.64255,-66.64255,0.56169,-1.50469,-0.32835
+BTCUSD,H1,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,189,0.92319,0.43386,-96.64255,-66.64255,0.48029,-1.86207,-0.39042
+BTCUSD,H1,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,171,0.87993,0.51462,-24.66465,-14.66465,0.75912,-0.80478,-0.11625
+BTCUSD,H1,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,171,0.87993,0.47368,-44.66465,-14.66465,0.60324,-1.42185,-0.19382
+BTCUSD,H1,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,16,0.08288,0.37500,-174.28748,-164.28748,0.46726,-0.59077,-0.07988
+BTCUSD,H1,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,16,0.08288,0.37500,-194.28748,-164.28748,0.42799,-0.65225,-0.08796
+BTCUSD,H1,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,9,0.04807,0.22222,-140.80905,-130.80905,0.28296,-0.97897,-0.03542
+BTCUSD,H1,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,9,0.04807,0.22222,-160.80905,-130.80905,0.24122,-1.05568,-0.04030
+BTCUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,176,0.84269,0.19318,-158.45861,-148.45861,0.50595,-1.79529,-0.53547
+BTCUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,176,0.84269,0.19318,-178.45861,-148.45861,0.47024,-2.00001,-0.57520
+BTCUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,155,0.80766,0.19355,-24.09146,-14.09146,0.88156,-0.30353,-0.14471
+BTCUSD,H1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,155,0.80766,0.19355,-44.09146,-14.09146,0.79916,-0.55486,-0.21401
+BTCUSD,H1,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,1024,4.93321,0.45898,-9.58517,0.41483,0.75067,-1.33558,-0.23169
+BTCUSD,H1,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,1024,4.93321,0.31738,-29.58517,0.41483,0.41637,-4.05877,-0.54054
+BTCUSD,H1,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,819,4.18377,0.42979,-10.86036,-0.86036,0.62248,-2.19353,-0.21513
+BTCUSD,H1,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,819,4.18377,0.23932,-30.86036,-0.86036,0.27107,-5.87570,-0.49252
+BTCUSD,H1,yours,Ichimoku cloud breakout,2019-2022,low_cost,5007,24.12165,0.28420,-11.22609,-1.22609,0.72737,-3.43039,-0.77514
+BTCUSD,H1,yours,Ichimoku cloud breakout,2019-2022,typical_cost,5007,24.12165,0.21090,-31.22609,-1.22609,0.44545,-9.00537,-0.98180
+BTCUSD,H1,yours,Ichimoku cloud breakout,2023-2026,low_cost,4706,23.98775,0.27263,-10.25631,-0.25631,0.66204,-4.44153,-0.73249
+BTCUSD,H1,yours,Ichimoku cloud breakout,2023-2026,typical_cost,4706,23.98775,0.18296,-30.25631,-0.25631,0.34107,-11.97310,-0.97804
+BTCUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,2,0.02158,0.50000,-218.56005,-208.56005,0.12649,-0.64828,-0.02495
+BTCUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,2,0.02158,0.50000,-238.56005,-208.56005,0.08320,-0.68351,-0.02719
+BTCUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,1,,,,,,,
+BTCUSD,H1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,1,,,,,,,
+BTCUSD,H1,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,693,3.33630,0.60317,-10.19922,-0.19922,0.90910,-0.48905,-0.21778
+BTCUSD,H1,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,693,3.33630,0.56710,-30.19922,-0.19922,0.74932,-1.43546,-0.44765
+BTCUSD,H1,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,704,3.59369,0.59375,-7.38515,2.61485,0.89761,-0.59510,-0.15147
+BTCUSD,H1,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,704,3.59369,0.55824,-27.38515,2.61485,0.66041,-2.16223,-0.41652
+BTCUSD,H1,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,189,0.92319,0.46032,-76.64255,-66.64255,0.56169,-1.50469,-0.32835
+BTCUSD,H1,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,189,0.92319,0.43386,-96.64255,-66.64255,0.48029,-1.86207,-0.39042
+BTCUSD,H1,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,171,0.87993,0.51462,-24.66465,-14.66465,0.75912,-0.80478,-0.11625
+BTCUSD,H1,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,171,0.87993,0.47368,-44.66465,-14.66465,0.60324,-1.42185,-0.19382
+BTCUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,586,2.81538,0.39078,-18.82464,-8.82464,0.91329,-0.45267,-0.36346
+BTCUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,586,2.81538,0.38908,-38.82464,-8.82464,0.83070,-0.93011,-0.52577
+BTCUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,618,3.15699,0.36408,-15.19668,-5.19668,0.89217,-0.63960,-0.27846
+BTCUSD,H1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,618,3.15699,0.36408,-35.19668,-5.19668,0.77092,-1.46987,-0.48099
+BTCUSD,H1,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,773,3.72655,0.31436,12.63768,22.63768,1.12990,0.50220,0.14398
+BTCUSD,H1,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,773,3.72655,0.28072,-7.36232,22.63768,0.93385,-0.29228,-0.22383
+BTCUSD,H1,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,708,3.61149,0.31638,7.68753,17.68753,1.10368,0.40500,0.08755
+BTCUSD,H1,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,708,3.61149,0.27260,-12.31247,17.68753,0.86060,-0.64615,-0.25322
+BTCUSD,H1,standard,Ichimoku cloud breakout,2019-2022,low_cost,1411,6.80228,0.29199,-2.61469,7.38531,0.96415,-0.18298,-0.18090
+BTCUSD,H1,standard,Ichimoku cloud breakout,2019-2022,typical_cost,1411,6.80228,0.24167,-22.61469,7.38531,0.74186,-1.54557,-0.59679
+BTCUSD,H1,standard,Ichimoku cloud breakout,2023-2026,low_cost,1282,6.53945,0.26833,-4.75669,5.24331,0.90945,-0.44928,-0.19541
+BTCUSD,H1,standard,Ichimoku cloud breakout,2023-2026,typical_cost,1282,6.53945,0.20047,-24.75669,5.24331,0.63534,-2.26748,-0.59292
+BTCUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,6,0.03530,0.33333,42.17037,52.17037,2.10323,0.30262,0.00745
+BTCUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,6,0.03530,0.33333,22.17037,52.17037,1.43001,0.16103,0.00377
+BTCUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,2,0.01186,1.00000,271.57926,281.57926,inf,0.78378,0.01667
+BTCUSD,H1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,2,0.01186,1.00000,251.57926,281.57926,inf,0.78354,0.01545
+BTCUSD,H4,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,54,0.26506,0.57407,-74.95678,-64.95678,0.72329,-0.48084,-0.11896
+BTCUSD,H4,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,54,0.26506,0.55556,-94.95678,-64.95678,0.66049,-0.60565,-0.14320
+BTCUSD,H4,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,51,0.26516,0.50980,-41.59513,-31.59513,0.81439,-0.33979,-0.06917
+BTCUSD,H4,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,51,0.26516,0.49020,-61.59513,-31.59513,0.73682,-0.50077,-0.09467
+BTCUSD,H4,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,7,0.03716,0.57143,-25.22630,-15.22630,0.92021,-0.04610,-0.00913
+BTCUSD,H4,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,7,0.03716,0.57143,-45.22630,-15.22630,0.86073,-0.08199,-0.01298
+BTCUSD,H4,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,7,0.03719,0.42857,-124.34845,-114.34845,0.44455,-0.43532,-0.02528
+BTCUSD,H4,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,7,0.03719,0.28571,-144.34845,-114.34845,0.38853,-0.49697,-0.02910
+BTCUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,52,0.25034,0.25000,15.14070,25.14070,1.02882,0.03830,-0.08982
+BTCUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,52,0.25034,0.25000,-4.85930,25.14070,0.99101,-0.01229,-0.11358
+BTCUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,46,0.24459,0.23913,-9.96395,0.03605,0.97292,-0.03729,-0.06266
+BTCUSD,H4,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,46,0.24459,0.23913,-29.96395,0.03605,0.92179,-0.11208,-0.08643
+BTCUSD,H4,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,258,1.24893,0.53101,-17.44625,-7.44625,0.77108,-0.62342,-0.12273
+BTCUSD,H4,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,258,1.24893,0.43023,-37.44625,-7.44625,0.56780,-1.32452,-0.22992
+BTCUSD,H4,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,224,1.14678,0.44643,-19.02439,-9.02439,0.67802,-0.94994,-0.11349
+BTCUSD,H4,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,224,1.14678,0.37500,-39.02439,-9.02439,0.44976,-1.90178,-0.21346
+BTCUSD,H4,yours,Ichimoku cloud breakout,2019-2022,low_cost,1193,5.77113,0.31769,-2.63696,7.36304,0.96537,-0.17060,-0.15905
+BTCUSD,H4,yours,Ichimoku cloud breakout,2019-2022,typical_cost,1193,5.77113,0.27075,-22.63696,7.36304,0.74927,-1.44456,-0.53909
+BTCUSD,H4,yours,Ichimoku cloud breakout,2023-2026,low_cost,1151,5.88404,0.32754,-8.42927,1.57073,0.83625,-1.01188,-0.25130
+BTCUSD,H4,yours,Ichimoku cloud breakout,2023-2026,typical_cost,1151,5.88404,0.26586,-28.42927,1.57073,0.56671,-3.31461,-0.59449
+BTCUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+BTCUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+BTCUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,0,,,,,,,
+BTCUSD,H4,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,0,,,,,,,
+BTCUSD,H4,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,199,0.96599,0.57286,-39.14029,-29.14029,0.83925,-0.50858,-0.23935
+BTCUSD,H4,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,199,0.96599,0.56784,-59.14029,-29.14029,0.76541,-0.76639,-0.31261
+BTCUSD,H4,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,176,0.90434,0.61932,-1.09752,8.90248,0.99239,-0.02222,-0.03245
+BTCUSD,H4,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,176,0.90434,0.60795,-21.09752,8.90248,0.86106,-0.42632,-0.11950
+BTCUSD,H4,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,54,0.26506,0.57407,-74.95678,-64.95678,0.72329,-0.48084,-0.11896
+BTCUSD,H4,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,54,0.26506,0.55556,-94.95678,-64.95678,0.66049,-0.60565,-0.14320
+BTCUSD,H4,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,51,0.26516,0.50980,-41.59513,-31.59513,0.81439,-0.33979,-0.06917
+BTCUSD,H4,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,51,0.26516,0.49020,-61.59513,-31.59513,0.73682,-0.50077,-0.09467
+BTCUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,174,0.83312,0.43678,24.35650,34.35650,1.06387,0.17926,-0.06001
+BTCUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,174,0.83312,0.43678,4.35650,34.35650,1.01110,0.03207,-0.13849
+BTCUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,161,0.82726,0.42236,31.82821,41.82821,1.12333,0.34879,0.06202
+BTCUSD,H4,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,161,0.82726,0.42236,11.82821,41.82821,1.04387,0.12977,-0.02565
+BTCUSD,H4,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,158,0.76856,0.37975,43.65442,53.65442,1.22203,0.38009,0.08490
+BTCUSD,H4,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,158,0.76856,0.33544,23.65442,53.65442,1.11302,0.20611,0.00147
+BTCUSD,H4,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,165,0.84288,0.31515,27.47185,37.47185,1.19273,0.36779,0.07358
+BTCUSD,H4,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,165,0.84288,0.30303,7.47185,37.47185,1.04778,0.10016,-0.01656
+BTCUSD,H4,standard,Ichimoku cloud breakout,2019-2022,low_cost,302,1.47105,0.37086,60.31720,70.31720,1.37634,0.72426,0.33313
+BTCUSD,H4,standard,Ichimoku cloud breakout,2019-2022,typical_cost,302,1.47105,0.34437,40.31720,70.31720,1.23281,0.48430,0.14414
+BTCUSD,H4,standard,Ichimoku cloud breakout,2023-2026,low_cost,318,1.63159,0.28931,-14.26059,-4.26059,0.87005,-0.38292,-0.15393
+BTCUSD,H4,standard,Ichimoku cloud breakout,2023-2026,typical_cost,318,1.63159,0.26101,-34.26059,-4.26059,0.72398,-0.91350,-0.28640
+BTCUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,0,,,,,,,
+BTCUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,0,,,,,,,
+BTCUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,1,,,,,,,
+BTCUSD,H4,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,1,,,,,,,
+BTCUSD,D1,yours,"RSI reversal 20/80, exit 50",2019-2022,low_cost,15,0.15336,0.46667,-84.96395,-74.96395,0.86555,-0.18479,-0.12644
+BTCUSD,D1,yours,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,15,0.15336,0.46667,-104.96395,-74.96395,0.83665,-0.22803,-0.14063
+BTCUSD,D1,yours,"RSI reversal 20/80, exit 50",2023-2026,low_cost,13,0.06835,0.38462,-520.70363,-510.70363,0.19378,-1.13526,-0.18073
+BTCUSD,D1,yours,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,13,0.06835,0.38462,-540.70363,-510.70363,0.17847,-1.16260,-0.18688
+BTCUSD,D1,yours,"RSI reversal 10/90, exit 50",2019-2022,low_cost,0,,,,,,,
+BTCUSD,D1,yours,"RSI reversal 10/90, exit 50",2019-2022,typical_cost,0,,,,,,,
+BTCUSD,D1,yours,"RSI reversal 10/90, exit 50",2023-2026,low_cost,0,,,,,,,
+BTCUSD,D1,yours,"RSI reversal 10/90, exit 50",2023-2026,typical_cost,0,,,,,,,
+BTCUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,low_cost,15,0.11427,0.13333,-633.32594,-623.32594,0.52633,-0.59334,-0.41951
+BTCUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2019-2022,typical_cost,15,0.11427,0.13333,-653.32594,-623.32594,0.51763,-0.61093,-0.42717
+BTCUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,low_cost,12,0.06285,0.16667,-617.07939,-607.07939,0.28596,-0.91115,-0.20228
+BTCUSD,D1,yours,"RSI reversal 20/80, exit opposite level",2023-2026,typical_cost,12,0.06285,0.16667,-637.07939,-607.07939,0.27677,-0.93296,-0.20788
+BTCUSD,D1,yours,Ichimoku TK cross with cloud,2019-2022,low_cost,30,0.16501,0.60000,-38.43272,-28.43272,0.82915,-0.16312,-0.05443
+BTCUSD,D1,yours,Ichimoku TK cross with cloud,2019-2022,typical_cost,30,0.16501,0.56667,-58.43272,-28.43272,0.74938,-0.24752,-0.07069
+BTCUSD,D1,yours,Ichimoku TK cross with cloud,2023-2026,low_cost,32,0.18259,0.40625,-180.99750,-170.99750,0.24783,-1.15440,-0.16790
+BTCUSD,D1,yours,Ichimoku TK cross with cloud,2023-2026,typical_cost,32,0.18259,0.34375,-200.99750,-170.99750,0.20719,-1.26196,-0.18389
+BTCUSD,D1,yours,Ichimoku cloud breakout,2019-2022,low_cost,164,0.82517,0.39024,7.19324,17.19324,1.03581,0.07698,-0.04426
+BTCUSD,D1,yours,Ichimoku cloud breakout,2019-2022,typical_cost,164,0.82517,0.35976,-12.80676,17.19324,0.93996,-0.13704,-0.12314
+BTCUSD,D1,yours,Ichimoku cloud breakout,2023-2026,low_cost,181,0.93139,0.37569,21.46332,31.46332,1.16549,0.32843,0.05910
+BTCUSD,D1,yours,Ichimoku cloud breakout,2023-2026,typical_cost,181,0.93139,0.35359,1.46332,31.46332,1.01028,0.02241,-0.03874
+BTCUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,low_cost,0,,,,,,,
+BTCUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2019-2022,typical_cost,0,,,,,,,
+BTCUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,low_cost,0,,,,,,,
+BTCUSD,D1,yours,Cloud trend + RSI 20/80 pullback,2023-2026,typical_cost,0,,,,,,,
+BTCUSD,D1,standard,"RSI reversal 30/70, exit 50",2019-2022,low_cost,33,0.16760,0.51515,-154.12486,-144.12486,0.72853,-0.38108,-0.18096
+BTCUSD,D1,standard,"RSI reversal 30/70, exit 50",2019-2022,typical_cost,33,0.16760,0.51515,-174.12486,-144.12486,0.69845,-0.42957,-0.19556
+BTCUSD,D1,standard,"RSI reversal 30/70, exit 50",2023-2026,low_cost,27,0.14079,0.48148,-114.79497,-104.79497,0.73181,-0.36274,-0.10541
+BTCUSD,D1,standard,"RSI reversal 30/70, exit 50",2023-2026,typical_cost,27,0.14079,0.48148,-134.79497,-104.79497,0.69254,-0.42452,-0.11868
+BTCUSD,D1,standard,"RSI reversal 20/80, exit 50",2019-2022,low_cost,15,0.15336,0.46667,-84.96395,-74.96395,0.86555,-0.18479,-0.12644
+BTCUSD,D1,standard,"RSI reversal 20/80, exit 50",2019-2022,typical_cost,15,0.15336,0.46667,-104.96395,-74.96395,0.83665,-0.22803,-0.14063
+BTCUSD,D1,standard,"RSI reversal 20/80, exit 50",2023-2026,low_cost,13,0.06835,0.38462,-520.70363,-510.70363,0.19378,-1.13526,-0.18073
+BTCUSD,D1,standard,"RSI reversal 20/80, exit 50",2023-2026,typical_cost,13,0.06835,0.38462,-540.70363,-510.70363,0.17847,-1.16260,-0.18688
+BTCUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,low_cost,29,0.14923,0.27586,-292.37534,-282.37534,0.76231,-0.32954,-0.35935
+BTCUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2019-2022,typical_cost,29,0.14923,0.27586,-312.37534,-282.37534,0.74900,-0.35174,-0.37005
+BTCUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,low_cost,23,0.12156,0.26087,-192.05024,-182.05024,0.73584,-0.34156,-0.16557
+BTCUSD,D1,standard,"RSI reversal 30/70, exit opposite level",2023-2026,typical_cost,23,0.12156,0.26087,-212.05024,-182.05024,0.71414,-0.37638,-0.17645
+BTCUSD,D1,standard,Ichimoku TK cross with cloud,2019-2022,low_cost,23,0.11623,0.47826,640.10838,650.10838,2.37738,0.60696,0.27716
+BTCUSD,D1,standard,Ichimoku TK cross with cloud,2019-2022,typical_cost,23,0.11623,0.47826,620.10838,650.10838,2.30504,0.58908,0.26215
+BTCUSD,D1,standard,Ichimoku TK cross with cloud,2023-2026,low_cost,21,0.11329,0.19048,-235.22682,-225.22682,0.59310,-0.46886,-0.16338
+BTCUSD,D1,standard,Ichimoku TK cross with cloud,2023-2026,typical_cost,21,0.11329,0.19048,-255.22682,-225.22682,0.57053,-0.50707,-0.17354
+BTCUSD,D1,standard,Ichimoku cloud breakout,2019-2022,low_cost,41,0.22766,0.43902,418.71588,428.71588,2.00707,0.48247,0.23420
+BTCUSD,D1,standard,Ichimoku cloud breakout,2019-2022,typical_cost,41,0.22766,0.43902,398.71588,428.71588,1.93377,0.45983,0.20538
+BTCUSD,D1,standard,Ichimoku cloud breakout,2023-2026,low_cost,51,0.26634,0.39216,166.12692,176.12692,1.62217,0.55166,0.16863
+BTCUSD,D1,standard,Ichimoku cloud breakout,2023-2026,typical_cost,51,0.26634,0.35294,146.12692,176.12692,1.52251,0.48641,0.13688
+BTCUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,low_cost,0,,,,,,,
+BTCUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2019-2022,typical_cost,0,,,,,,,
+BTCUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,low_cost,0,,,,,,,
+BTCUSD,D1,standard,Cloud trend + RSI 30/70 pullback,2023-2026,typical_cost,0,,,,,,,
