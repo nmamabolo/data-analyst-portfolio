@@ -102,6 +102,10 @@ The [`gold_factory/`](gold_factory/) folder created **3,277 rules for gold** and
 
 Deriv generates the [`v75_sim/`](v75_sim/) market from a random number generator (75% volatility, a tick every 2 seconds). Rebuilt from that recipe and run for 20 simulated years, the trader's "sell at RSI 80, buy at 20" rule has an edge of about zero before costs and **−$56 a year** at 0.01 lot after the spread. Individual years range from +$408 to −$551, all luck. [Read the study →](v75_sim/)
 
+## 🌍 RSI 80/20 on 34 markets
+
+The [`markets/`](markets/) folder runs the trader's "sell at RSI 80, buy at 20" rule on 34 markets: 12 currency pairs, 8 stock indices, gold, 6 commodities, 4 government bonds, Bitcoin and the random V75. **On none does it beat luck.** The best result (ASX 200, t = 1.5) is below what chance gives the best of 34 markets (about 2.1). The random V75 ranks 3rd, and 10 markets lose significantly after costs. Stock indices came closest. [Read the study →](markets/)
+
 ---
 
 ## How to run it
@@ -114,7 +118,7 @@ python bot.py backtest                         # all 8 pairs, 2005 to today
 python bot.py backtest --pairs EURUSD GBPUSD --fast 20 --slow 200 --start 2019-01-01
 python bot.py optimize                         # rebuild the grid, the out-of-sample tables and the charts in results/
 python bot.py signals --equity 10000           # current positions, stops and next actions
-python -m pytest                               # 53 tests across all seven engines
+python -m pytest                               # 56 tests across all eight engines
 ```
 
 Example `signals` output (data to 2 Oct 2026):
@@ -157,6 +161,7 @@ Forex-Trading-Bot/
 ├── gold_rsi/               # "sell at RSI 80, buy at 20" on gold M15, 2020-2026
 ├── gold_factory/           # 3,277 generated gold rules, luck control, the evening pattern
 ├── v75_sim/                # Deriv Volatility 75 rebuilt from its random-number recipe; RSI 80/20 on it
+├── markets/                # RSI 80/20 on 34 markets (FX, indices, metals, commodities, bonds, crypto)
 └── tests/test_bot.py
 ```
 
