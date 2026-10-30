@@ -94,6 +94,10 @@ The [`rsi_ichimoku/`](rsi_ichimoku/) folder tests RSI(14) at 10/20/80/90 and Ich
 
 The [`gold_rsi/`](gold_rsi/) folder tests "sell when RSI reaches 80, buy when it reaches 20" on gold's 15-minute chart at 0.01 lot. It uses 2.3 million 1-minute bars from 2020 to Oct 2026, plus 47 variations. After costs the rule lost **$654**: sells at 80 lost $1,215 as gold went from $1,528 to over $4,000. Its worst drawdown of $1,354 would have wiped out a R10,000 account by February 2025. None of the 48 variations made money in both periods. [Read the study →](gold_rsi/)
 
+## 🏭🥇 Gold-only strategy factory
+
+The [`gold_factory/`](gold_factory/) folder created **3,277 rules for gold** and tested them on 15-minute, 1-hour, 4-hour and daily charts (2020 – Oct 2026). More rules passed on shuffled prices (58) than on real prices (33), so there's no general timing edge beyond luck. One pattern stood out: **gold rising in the evening (about 19:00–23:00 UTC)**. Buying at 20:00 UTC and selling at midnight made **+$53 a month at 0.01 lot in 2025–26**, but it lost money in 2020–22 and broke even in 2023–24. [Read the study →](gold_factory/)
+
 ---
 
 ## How to run it
@@ -106,7 +110,7 @@ python bot.py backtest                         # all 8 pairs, 2005 to today
 python bot.py backtest --pairs EURUSD GBPUSD --fast 20 --slow 200 --start 2019-01-01
 python bot.py optimize                         # rebuild the grid, the out-of-sample tables and the charts in results/
 python bot.py signals --equity 10000           # current positions, stops and next actions
-python -m pytest                               # 46 tests across all five engines
+python -m pytest                               # 52 tests across all six engines
 ```
 
 Example `signals` output (data to 2 Oct 2026):
@@ -147,6 +151,7 @@ Forex-Trading-Bot/
 ├── factory/                # strategy generator, multi-asset tests, income/rollover plans
 ├── rsi_ichimoku/           # a trader's MT5 RSI + Ichimoku settings, tested on EUR/USD and Bitcoin
 ├── gold_rsi/               # "sell at RSI 80, buy at 20" on gold M15, 2020-2026
+├── gold_factory/           # 3,277 generated gold rules, luck control, the evening pattern
 └── tests/test_bot.py
 ```
 

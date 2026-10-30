@@ -1,0 +1,34 @@
+timeframe,id,spec,family,discover_sharpe,discover_ann_return,discover_trades,discover_exposure,confirm_sharpe,confirm_ann_return,confirm_trades,confirm_exposure,final_sharpe,final_ann_return,final_trades,final_exposure
+M15,159,"ma_cross(fast=20, slow=200) | long_only",ma_cross,0.5457,0.0575,317,0.5255,0.8883,0.0896,201,0.5467,0.6837,0.1131,151,0.5382
+M15,846,"hour_of_day(start_utc=20, hours=4) | long_only",hour_of_day,0.5121,0.0170,767,0.1155,1.2835,0.0339,514,0.1161,2.1258,0.1699,389,0.1167
+H1,32,"ma_cross(fast=5, slow=50) | vol_high(n=63) | long_short",ma_cross,0.7196,0.0843,319,0.4730,0.5696,0.0545,220,0.4581,0.6153,0.1007,133,0.4187
+H1,100,"ma_cross(fast=5, slow=100) | vol_high(n=63) | long_only",ma_cross,0.5148,0.0400,178,0.2232,0.6682,0.0510,134,0.2512,0.7609,0.0914,78,0.2297
+H1,147,donchian(n=100) | long_short | max 10d,donchian,0.7686,0.0323,109,0.0617,0.5502,0.0129,55,0.0465,1.0453,0.0609,54,0.0615
+H1,347,"vol_shock(k=3.0, hold=10, follow=False) | vol_low(n=63) | long_only | max 21d",vol_shock,0.6477,0.0201,116,0.0532,1.2999,0.0370,103,0.0705,0.5039,0.0231,58,0.0568
+H1,609,"ma_cross(fast=5, slow=50) | vol_high(n=63) | long_only",ma_cross,0.6283,0.0508,233,0.2312,0.9785,0.0721,165,0.2592,0.6120,0.0747,101,0.2249
+H4,44,"zscore_rev(n=50, k=2.5, exit=0.0) | long_only",zscore_rev,0.5087,0.0506,18,0.4204,0.9400,0.0685,11,0.4430,-0.7223,-0.0861,4,0.2871
+H4,252,"vol_shock(k=2.5, hold=10, follow=True) | vol_high(n=20) | long_only | max 21d",vol_shock,0.5393,0.0262,62,0.0952,0.7759,0.0359,41,0.1078,0.4680,0.0396,15,0.0527
+H4,280,"vol_shock(k=2.5, hold=5, follow=True) | long_short | max 5d",vol_shock,0.7528,0.0482,181,0.1905,0.6153,0.0329,124,0.1954,0.0849,0.0114,80,0.1635
+H4,283,"vol_shock(k=2.5, hold=10, follow=True) | long_only",vol_shock,0.6847,0.0426,88,0.1878,0.7702,0.0425,58,0.1813,0.3617,0.0370,36,0.1378
+H4,483,donchian(n=20) | vol_high(n=63) | long_only,donchian,0.6439,0.0458,54,0.2090,0.7359,0.0610,49,0.2457,0.6494,0.0721,13,0.1485
+H4,509,"vol_shock(k=1.5, hold=5, follow=True) | trend(n=100) | long_only",vol_shock,0.5046,0.0274,174,0.1761,0.5027,0.0281,127,0.1879,0.4323,0.0420,83,0.1656
+H4,529,"vol_shock(k=2.0, hold=5, follow=True) | trend(n=200) | long_only",vol_shock,0.7017,0.0298,92,0.0940,1.0080,0.0446,85,0.1375,0.4617,0.0373,34,0.0685
+H4,536,"vol_shock(k=2.5, hold=10, follow=True) | trend(n=200) | long_only | max 10d",vol_shock,0.7465,0.0323,60,0.1059,0.5279,0.0263,52,0.1316,0.6739,0.0563,25,0.0822
+H4,609,"ma_cross(fast=5, slow=50) | vol_high(n=63) | long_only",ma_cross,0.8268,0.0585,59,0.2011,0.7646,0.0627,58,0.2570,0.5519,0.0714,14,0.1606
+D1,5,"turn_of_month(before=2, after=1) | trend(n=100) | long_only",turn_of_month,0.9955,0.0312,17,0.0581,1.3588,0.0584,20,0.1124,0.1691,0.0078,5,0.0333
+D1,25,ma_trend(n=20) | vol_low(n=63) | short_only | max 10d,ma_trend,0.5397,0.0249,18,0.1316,0.5306,0.0231,17,0.1357,-1.0422,-0.0155,2,0.0103
+D1,112,"turn_of_month(before=4, after=2) | vol_high(n=20) | long_short | max 5d",turn_of_month,0.5649,0.0195,12,0.0684,0.7917,0.0291,12,0.1085,1.0409,0.0169,1,0.0077
+D1,120,ma_trend(n=10) | vol_low(n=63) | long_only | max 10d,ma_trend,1.2058,0.0699,28,0.1858,1.6731,0.0910,19,0.1860,0.4843,0.0115,3,0.0359
+D1,124,short_rev(lookback=2) | vol_high(n=63) | long_only,short_rev,0.7530,0.0297,25,0.0735,1.5947,0.1116,53,0.2500,2.1771,0.0510,7,0.0256
+D1,272,short_rev(lookback=2) | vol_high(n=63) | long_only | max 5d,short_rev,0.7530,0.0297,25,0.0735,1.4507,0.1006,53,0.2442,2.1771,0.0510,7,0.0256
+D1,326,"turn_of_month(before=1, after=1) | long_only | max 10d",turn_of_month,0.6281,0.0330,35,0.0929,0.6110,0.0245,23,0.0911,-0.1409,-0.0140,16,0.0821
+D1,331,tsmom(lookback=10) | vol_low(n=63) | long_only | max 10d,tsmom,0.7556,0.0363,28,0.1742,1.7689,0.0998,13,0.1764,0.3841,0.0097,2,0.0308
+D1,385,short_rev(lookback=2) | vol_high(n=63) | long_short,short_rev,0.9901,0.0578,26,0.1587,0.8246,0.0916,55,0.5446,0.7402,0.0276,7,0.0923
+D1,443,"turn_of_month(before=2, after=2) | long_short | max 5d",turn_of_month,0.6771,0.0460,35,0.1832,0.6754,0.0384,23,0.1802,0.0447,0.0058,19,0.1692
+D1,548,"vol_shock(k=1.5, hold=10, follow=True) | vol_low(n=63) | long_short | max 5d",vol_shock,1.4071,0.0782,29,0.1794,0.5300,0.0309,21,0.1880,0.2429,0.0055,2,0.0308
+D1,566,"turn_of_month(before=2, after=2) | trend(n=100) | long_short",turn_of_month,0.9501,0.0342,19,0.0761,0.8720,0.0474,20,0.1473,-0.3328,-0.0201,5,0.0436
+D1,632,"turn_of_month(before=2, after=2) | vol_high(n=20) | long_short | max 10d",turn_of_month,0.5372,0.0162,11,0.0529,0.6370,0.0222,12,0.0814,1.0409,0.0169,1,0.0077
+D1,645,"vol_shock(k=1.5, hold=1, follow=True) | trend(n=200) | long_short",vol_shock,0.6122,0.0272,49,0.0761,0.5911,0.0213,40,0.0853,-0.4827,-0.0095,11,0.0282
+D1,663,"near_high(n=126, within=0.02) | long_short",near_high,0.5424,0.0426,18,0.2026,0.6966,0.0699,23,0.4516,-0.0736,-0.0055,12,0.1590
+D1,774,"turn_of_month(before=2, after=2) | long_only | max 10d",turn_of_month,0.6771,0.0460,35,0.1832,0.6754,0.0384,23,0.1802,0.0447,0.0058,19,0.1692
+D1,806,"turn_of_month(before=3, after=2) | trend(n=50) | long_only",turn_of_month,0.5104,0.0231,19,0.1019,0.6606,0.0371,18,0.1492,-0.4920,-0.0605,7,0.0872
