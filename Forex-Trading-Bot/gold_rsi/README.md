@@ -25,6 +25,30 @@ Over the whole period:
 
 Big winning trades, like a $75 sell into a sharp drop, do happen. The rule's best month made $421. But over 82 months the losses outweighed them.
 
+## One trade at a time, with compounding lot sizes
+
+The trader's exact plan:
+- **One trade at a time.** When RSI reaches 80, sell. Hold until RSI reaches 20, then close and buy. Hold until RSI reaches 80, then close and sell, and so on.
+- **Compounding.** The lot size grows with the account.
+
+`compound.py` simulates real accounts:
+- **Sizing:** before each trade, lots = account ÷ R10,000 (aggressive) or ÷ R20,000 (recommended), × 0.01, never below 0.01.
+- **Margin calls:** the open trade is marked to its worst price inside every 15-minute bar. If equity reaches the broker's stop-out level (50% margin level at 1:500), the account is closed.
+- **Versions:** with no stop-loss (trades close only at the opposite signal), and with a 3 × ATR safety stop.
+- **Coverage:** start capital R10,000, R100,000 or R1,000,000, and every start year from 2020 to 2025. That's 72 accounts.
+
+![Compounding account](results/compounding_account.png)
+
+| Start capital | No stop-loss | With 3 × ATR stop |
+|---|---|---|
+| **R10,000** | 12 of 12 margin-called (most within 1–2 years) | 12 of 12 margin-called (after 1–5 years) |
+| **R100,000** | 8 of 12 margin-called; survivors end at R23,000–28,000 | all survive, ending at R17,000–75,000 |
+| **R1,000,000** | aggressive: all 6 margin-called; recommended: end at R38,000–206,000 | end at R100,000–694,000 |
+
+**Of 72 accounts, 38 were margin-called and none ended with more money than it started with.**
+- **Compounding speeds up the losses.** It can't fix a rule that loses money on average. When the account grows, the next losing streak hits at the bigger size.
+- **A stop-loss slows the bleeding but doesn't stop it.** Without one, a single sell held through a gold rally can wipe out the account. That happened in 2020, 2024 and January 2026.
+
 ## Every variation tested (48)
 
 All variations were fixed in advance, on **M5, M15 and H1**:
@@ -57,7 +81,8 @@ All variations were fixed in advance, on **M5, M15 and H1**:
 
 ```bash
 python -m gold_rsi.lab       # downloads ~160 MB once, then all 48 combinations -> results/all_results.csv
-python -m gold_rsi.report    # the chart above
+python -m gold_rsi.report    # the trader's-rule chart
+python -m gold_rsi.compound  # one trade at a time with compounding lots and margin calls (72 accounts)
 python -m pytest tests/test_gold_rsi.py
 ```
 

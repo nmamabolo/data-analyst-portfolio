@@ -58,3 +58,13 @@ def test_server_clock_is_converted_to_utc():
     stamps = pd.DatetimeIndex(["2024-12-06 15:30", "2024-07-05 15:30", "2025-10-03 12:30"])
     # US jobs data at 08:30 New York: 13:30 UTC in winter, 12:30 in summer; later files are already UTC
     assert [t.strftime("%H:%M") for t in to_utc(stamps)] == ["13:30", "12:30", "12:30"]
+
+
+def test_compounding_account_hits_margin_call_on_a_runaway_loss():
+    from gold_rsi.compound import run_account
+    idx = pd.date_range("2024-01-02", periods=6, freq="15min", tz="UTC")
+    b = pd.DataFrame({"open": 2000.0, "high": [2000, 2000, 2700, 2700, 2700, 2700], "low": 2000.0,
+                      "close": 2000.0, "segment": 0}, index=idx)
+    trades = pd.DataFrame({"ent": [1], "ext": [5], "side": [-1], "entry": [2000.0], "move": [-700.0], "why": [1]})
+    curve, outcome, n, dd = run_account(b, trades, 10_000, idx[0], start_zar=10_000)     # ~$600 account, short 1 oz
+    assert outcome == "MARGIN CALL" and n == 1
