@@ -44,6 +44,7 @@ All variations were fixed in advance, on **M5, M15 and H1**:
 - **Data:** 2.3 million 1-minute spot gold bars, 2 Jan 2020 – 28 Oct 2026, from [parshant65-lang/Gold-XAUUSD-1m-2020-2025-Historical-Data](https://github.com/parshant65-lang/Gold-XAUUSD-1m-2020-2025-Historical-Data), pinned to one commit and downloaded on demand. The archive doesn't state its source or licence, so I validated it:
   - Its monthly averages match an independent gold series to about 0.1%.
   - Every bar's high and low are consistent with its open and close.
+  - The archive labels every timestamp as UTC, but files up to 30 Sep 2025 are actually in broker server time (EET/EEST, UTC+2/+3). There the daily break sits at 00:00 and the US jobs report at 15:30. These are converted to real UTC, which puts every jobs report at 12:30/13:30 UTC. RSI results on M5–H1 are identical either way.
   - It has **four holes in 2025** (10, 17, 26 and 68 days, about 4 months in total; visible as the straight line in the price chart). The data is split at every gap longer than 4 days: indicators restart after it, and no trade is held across it.
 - **Indicators and fills:**
   - RSI(14) uses Wilder smoothing, like MT5.

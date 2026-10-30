@@ -51,3 +51,10 @@ def test_segments_split_on_long_gaps_only():
 
 def test_financing_rate_is_yearly():
     assert FINANCING * 4000 * 365 / 365 == pytest.approx(160)   # $160 a year on one ounce at $4,000
+
+
+def test_server_clock_is_converted_to_utc():
+    from gold_rsi.lab import to_utc
+    stamps = pd.DatetimeIndex(["2024-12-06 15:30", "2024-07-05 15:30", "2025-10-03 12:30"])
+    # US jobs data at 08:30 New York: 13:30 UTC in winter, 12:30 in summer; later files are already UTC
+    assert [t.strftime("%H:%M") for t in to_utc(stamps)] == ["13:30", "12:30", "12:30"]

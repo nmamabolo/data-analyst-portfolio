@@ -7,7 +7,8 @@ here as an optional EMA(50) trend filter.
 
 Data: 1-minute spot gold, 2020 - Oct 2026, from the public archive
 github.com/parshant65-lang/Gold-XAUUSD-1m-2020-2025-Historical-Data (pinned commit).
-Its monthly averages match an independent gold series to about 0.1%. It has four
+Its monthly averages match an independent gold series to about 0.1%. Files up to
+30 Sep 2025 are in broker server time (EET/EEST) and are converted to UTC. It has four
 holes in 2025 (10-68 days, ~4 months in all); the data is split at any gap longer
 than 4 days, indicators restart after it, and no trade is held across it.
 
@@ -55,6 +56,21 @@ def fetch(dest: Path = CACHE / "gold_repo") -> Path:
     return dest
 
 
+SERVER_CLOCK_UNTIL = pd.Timestamp("2025-10-01")   # files before this use broker server time
+SERVER_TZ = "Europe/Athens"                       # EET/EEST: UTC+2 winter, UTC+3 summer, EU DST
+
+
+def to_utc(stamps: pd.DatetimeIndex) -> pd.DatetimeIndex:
+    """The archive labels everything UTC, but files up to 30 Sep 2025 are in the broker's server
+    clock (EET/EEST, so the daily break falls at 00:00 and US jobs data at 15:30). Later files
+    are true UTC (break at 21:00/22:00, jobs data at 12:30/13:30). Convert the older part."""
+    stamps = pd.DatetimeIndex(stamps)
+    server = stamps < SERVER_CLOCK_UNTIL
+    out = pd.Series(stamps.tz_localize("UTC"))
+    out[server] = stamps[server].tz_localize(SERVER_TZ, ambiguous="NaT", nonexistent="NaT").tz_convert("UTC")
+    return pd.DatetimeIndex(out)
+
+
 def load_m1(source: Path | None = None) -> pd.DataFrame:
     cached = CACHE / "xauusd_m1.parquet"
     if cached.exists():
@@ -62,8 +78,8 @@ def load_m1(source: Path | None = None) -> pd.DataFrame:
     root = Path(source) if source else fetch()
     files = sorted(root.glob("XAUUSD/1m/*/*/*.csv"))
     df = pd.concat([pd.read_csv(f, usecols=["timestamp", "open", "high", "low", "close"]) for f in files])
-    df.index = pd.to_datetime(df.pop("timestamp"), unit="ms", utc=True)
-    df = df.sort_index()
+    df.index = to_utc(pd.to_datetime(df.pop("timestamp"), unit="ms"))
+    df = df[df.index.notna()].sort_index()
     df = df[~df.index.duplicated()].astype(float)
     CACHE.mkdir(parents=True, exist_ok=True)
     df.to_parquet(cached)
