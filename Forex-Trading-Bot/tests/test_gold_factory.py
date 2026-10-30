@@ -52,3 +52,14 @@ def test_shuffle_keeps_the_overall_move():
     s = shuffled(b)
     assert s.close.iloc[-1] == pytest.approx(b.close.iloc[-1], rel=1e-9)
     assert not np.allclose(s.close.to_numpy(), b.close.to_numpy())
+
+
+def test_sizing_scales_linearly_with_lots():
+    from gold_factory.sizing import capital_per_001, per_lot_stats
+    idx = pd.date_range("2024-01-01", periods=60, freq="B")
+    net = pd.Series(np.tile([10.0, -30.0, 5.0], 20), index=idx)
+    s = per_lot_stats(net)
+    assert s["worst_trade"] == -30.0
+    cap = capital_per_001(s["max_drawdown"])
+    assert cap["recommended"] == pytest.approx(4 * abs(s["max_drawdown"]))
+    assert cap["conservative"] == pytest.approx(2 * cap["recommended"])

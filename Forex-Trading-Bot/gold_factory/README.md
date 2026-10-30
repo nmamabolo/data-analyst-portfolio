@@ -66,7 +66,43 @@ Across all 1,296 trades it made +$0.71 per trade on average, with a 44% win rate
   - 2025–26 averaged about **R880 a month**, but with a worst drawdown of about **R4,500** (45% of the account).
   - In 2020–22 the same rule lost about **R100 a month**.
 
-## 4. Before using it
+## 4. Lot sizes and how much capital you need
+
+Profit, loss and drawdown all scale exactly with lot size. 0.01 lot = 1 ounce, 1.00 lot = 100 ounces.
+
+The capital an account needs is set by **the worst losing stretch, −$304 per 0.01 lot** (March 2020 → April 2023, three years below its previous high), not by margin. Margin is small: about $41 per 0.01 lot at 1:100 leverage.
+
+**Recommended capital = 4 × the worst stretch: $1,217 (≈R20,300) per 0.01 lot.** A repeat of the worst stretch would then cost about 25% of the account.
+
+| Lots | Avg month, 2020–26 | Avg month, 2025–26 pace | Worst month | Worst single night | Worst losing stretch | **Recommended capital** |
+|---|---|---|---|---|---|---|
+| 0.01 | +$11 (R190) | +$51 (R850) | −$111 | −$127 | −$304 (R5,100) | **$1,217 (R20,300)** |
+| 0.02 | +$23 (R380) | +$102 (R1,700) | −$221 | −$254 | −$609 | **$2,435 (R40,600)** |
+| 0.05 | +$57 (R950) | +$255 (R4,250) | −$553 | −$634 | −$1,522 | **$6,087 (R101,500)** |
+| 0.10 | +$114 (R1,900) | +$510 (R8,500) | −$1,107 | −$1,268 | −$3,044 | **$12,174 (R203,000)** |
+| 0.20 | +$228 (R3,800) | +$1,019 (R17,000) | −$2,214 | −$2,536 | −$6,087 | **$24,349 (R406,000)** |
+| 0.50 | +$569 (R9,500) | +$2,548 (R42,500) | −$5,534 | −$6,341 | −$15,218 | **$60,871 (R1.0M)** |
+| 1.00 | +$1,138 (R19,000) | +$5,095 (R84,900) | −$11,069 | −$12,681 | −$30,436 | **$121,743 (R2.0M)** |
+
+**Other capital levels per 0.01 lot:**
+- **Aggressive, $609 (≈R10,100):** a repeat of the worst stretch costs about **half the account**.
+- **Conservative, $2,435 (≈R40,600):** survives a stretch **twice as bad** as any seen, at a 25% loss.
+
+**What R15,000 a month of bills would take:**
+
+| If the rule keeps earning… | Lot size needed | Recommended capital |
+|---|---|---|
+| …at the 2025–26 pace ($51 per 0.01 lot a month) | 0.18 lot | **≈ $21,500 (R358,000)** |
+| …at its 2020–26 average ($11 per 0.01 lot a month) | 0.79 lot | **≈ $96,000 (R1.6 million)** |
+
+**With R10,000 (≈ $600):**
+- **Maximum size is 0.01 lot**, and that's already the aggressive level.
+- **Expected income:** about R190 a month at the long-run average, or about R850 a month if the 2025–26 pace continues.
+- **Risk:** a repeat of the 2020–23 stretch would take about half the account.
+
+**Losing years happen.** Shuffling whole months of real results into 20,000 random 12-month sequences gives a **33% chance of a losing year** using all years, and **5%** using only 2025–26. This shuffle breaks up multi-year losing streaks like 2020–23, so it understates the risk. Plan around the real worst stretch, not the shuffle.
+
+## 5. Before using it
 
 1. **Forward-test it on a demo account** for at least 2–3 months: buy 0.01 lot at 20:00 UTC (22:00 SAST) and close at 00:00 UTC (02:00 SAST) on weekdays.
 2. **Check your broker's swap.** The cost model charges one full night of financing per trade. A swap-free account, or a broker with a smaller gold swap, would improve results.
@@ -77,6 +113,7 @@ Across all 1,296 trades it made +$0.71 per trade on average, with a 44% win rate
 ```bash
 python -m gold_factory.run      # 3,277 rules, real + shuffled (~5 min; gold data from gold_rsi.lab)
 python -m gold_factory.report   # heatmap, evening-rule trades and yearly chart
+python -m gold_factory.sizing   # lot sizes, capital and loss odds -> results/evening_rule_sizing.csv
 python -m pytest tests/test_gold_factory.py
 ```
 
