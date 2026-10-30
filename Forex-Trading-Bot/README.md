@@ -98,6 +98,10 @@ The [`gold_rsi/`](gold_rsi/) folder tests "sell when RSI reaches 80, buy when it
 
 The [`gold_factory/`](gold_factory/) folder created **3,277 rules for gold** and tested them on 15-minute, 1-hour, 4-hour and daily charts (2020 – Oct 2026). More rules passed on shuffled prices (58) than on real prices (33), so there's no general timing edge beyond luck. One pattern stood out: **gold rising in the evening (about 19:00–23:00 UTC)**. Buying at 20:00 UTC and selling at midnight made **+$53 a month at 0.01 lot in 2025–26**, but it lost money in 2020–22 and broke even in 2023–24. [Read the study →](gold_factory/)
 
+## 🎲 Volatility 75 Index: RSI on a random-number market
+
+Deriv generates the [`v75_sim/`](v75_sim/) market from a random number generator (75% volatility, a tick every 2 seconds). Rebuilt from that recipe and run for 20 simulated years, the trader's "sell at RSI 80, buy at 20" rule has an edge of about zero before costs and **−$56 a year** at 0.01 lot after the spread. Individual years range from +$408 to −$551, all luck. [Read the study →](v75_sim/)
+
 ---
 
 ## How to run it
@@ -110,7 +114,7 @@ python bot.py backtest                         # all 8 pairs, 2005 to today
 python bot.py backtest --pairs EURUSD GBPUSD --fast 20 --slow 200 --start 2019-01-01
 python bot.py optimize                         # rebuild the grid, the out-of-sample tables and the charts in results/
 python bot.py signals --equity 10000           # current positions, stops and next actions
-python -m pytest                               # 52 tests across all six engines
+python -m pytest                               # 53 tests across all seven engines
 ```
 
 Example `signals` output (data to 2 Oct 2026):
@@ -152,6 +156,7 @@ Forex-Trading-Bot/
 ├── rsi_ichimoku/           # a trader's MT5 RSI + Ichimoku settings, tested on EUR/USD and Bitcoin
 ├── gold_rsi/               # "sell at RSI 80, buy at 20" on gold M15, 2020-2026
 ├── gold_factory/           # 3,277 generated gold rules, luck control, the evening pattern
+├── v75_sim/                # Deriv Volatility 75 rebuilt from its random-number recipe; RSI 80/20 on it
 └── tests/test_bot.py
 ```
 
